@@ -4,7 +4,7 @@
              x:Class="book3.BookPage"
              Title="本棚">
     
-    <ListView x:Name="BookListView" RowHeight="100">
+    <ListView x:Name="BookListView" RowHeight="100" ItemTapped="Detail">
         <ListView.ItemTemplate>
             <DataTemplate>
 

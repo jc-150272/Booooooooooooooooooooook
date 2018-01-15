@@ -96,6 +96,10 @@ namespace book3
 
         }
 
+        private void Detail(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CommonPage());
+        }
 
         public class Book
         {

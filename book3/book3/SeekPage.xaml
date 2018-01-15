@@ -26,8 +26,8 @@
                 </Picker>
 
                 <!-- 親カテゴリを指定するプルダウンを表示 -->
-                <Picker Title="親カテゴリ" WidthRequest="240" 
-                        SelectedIndexChanged="OnSelectedIndexChanged" x:Name="picker2">
+                <Picker Title="親カテゴリ" WidthRequest="240"
+                        Margin="20,0,0,0" SelectedIndexChanged="OnSelectedIndexChanged" x:Name="picker2">
                     <Picker.Items>
                         <x:String>小説</x:String>
                         <x:String>漫画</x:String>
@@ -36,7 +36,7 @@
                 </Picker>
 
                 <!-- 子カテゴリを指定するプルダウンを表示 -->
-                <Picker Title="子カテゴリ" WidthRequest="240" x:Name="picker3">
+                <Picker Title="子カテゴリ" WidthRequest="240" Margin="20,0,0,0" x:Name="picker3">
                     <Picker.Items>
                     </Picker.Items>
                 </Picker>
