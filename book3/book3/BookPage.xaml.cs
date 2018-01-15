@@ -98,7 +98,7 @@ namespace book3
 
         private void Detail(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CommonPage());
+            DisplayAlert("警告", BookListView.SelectedItem.Name.ToString(), "OK");      
         }
 
         public class Book
