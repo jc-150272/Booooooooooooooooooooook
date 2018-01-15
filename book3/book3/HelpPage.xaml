@@ -5,7 +5,7 @@
              Title="ヘルプ">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="へるぷするよー"
+            <Label Text="へるぷするよ"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
