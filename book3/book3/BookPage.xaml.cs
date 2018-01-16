@@ -93,34 +93,67 @@ namespace book3
             }
 
             BookListView.ItemsSource = items;
+            BookListView.HasUnevenRows = true;
+
+            BookListView.ItemSelected += (s, e) => {
+                Book tmp;
+                if (_index != -1) {
+                    tmp = data.ar[_index];
+                    tmp.Expand = false;
+                    data.ar[_index] = tmp;
+                }
+
+                _index = data.ar.IndexOf(e.SelectedItem as OneData);
+                if (_index != -1) {
+                    tmp = data.ar[_index];
+                    tmp.Expand = true;
+                    data.ar[_index] = tmp;
+                }
+
+            };
 
         }
 
-        private void Detail(object sender, EventArgs e)
-        {
-            DisplayAlert("警告", BookListView.SelectedItem.Name.ToString(), "OK");      
+        class PreserveAttribute : System.Attribute{
+            public bool Conditional { get; set; }
+}
+        class MyCell : ViewCell {
+            }
+
+            View CreateExpandView() {
+
+            var name = new Label { FontSize = 12 };
+            name.SetBinding(Label.TextProperty, "Name");
+
+            var value = new Label { FontSize = 12 };
+            value.SetBinding(Label.TextProperty, "Value");
+
+            var layout = new StackLayout {
+                Children = { name,value }
+            };
+            return new StackLayout() {
+                Padding = new Thickness(5),
+                Orientation = StackOrientation.Horizontal //横に並べる
+            };
         }
 
-        public class Book
-        {
-            public int ISBN { get; set; }
+        protected override void OnBindingContextChanged() {
+            base.OnBindingContextChanged();
+            if (BindingContext == null) {
+                return;
+            }
+            var data = (Book)BindingContext;
 
-            public string Name { get; set; }
+            var expand = data.Expand;
 
-            public double Value { get; set; }
+            if (expand) {
+                Height = 150;
+                View = CreateExpandView();
 
-            public string ValueImage { get; set; }
+            }
 
-            public bool RedStar { get; set; }
-
-            public string RedStar2 { get; set; }
-
-            public bool BlueBook { get; set; }
-
-            public string BlueBook2 { get; set; }
 
         }
-
 
     }
 }
