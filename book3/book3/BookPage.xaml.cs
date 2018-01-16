@@ -157,7 +157,7 @@ namespace book3
 
     }
 
-        public class Book
+    public class Book
     {
         public int ISBN { get; set; }
 
@@ -175,10 +175,11 @@ namespace book3
 
         public string BlueBook2 { get; set; }
 
-    }
-
-    public Book()
+        public Book()
     {
         Expand = false; // <=詳細表示中かどうかのフラグ
     }
+
+    }
+
 }
