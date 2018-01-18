@@ -101,8 +101,8 @@ namespace book3
         
         void NavigateDetail(object sender, ItemTappedEventArgs e)
         {
-             var name = new Label ();
-             name.SetBinding (Label.TextProperty, "Name");
+             string name;
+             name.SetBinding(string.TextProperty,"Name");
              DisplayAlert(name,"aa","aa");
         }
     }
