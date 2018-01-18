@@ -98,12 +98,14 @@ namespace book3
             BookListView.ItemsSource = items;
 
             void NavigateDetail(object sender, EventArgs e)
-        {
+            {
              var name = new Label ();
              name.SetBinding (Label.TextProperty, "Name");
              DisplayAlert("{Binding Name}","aa","aa");
+            }
         }
-        }
+    }
+    
 
     public class Book
     {
@@ -130,3 +132,4 @@ namespace book3
     }
 
 }
+    
