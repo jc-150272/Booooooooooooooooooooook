@@ -103,7 +103,7 @@ namespace book3
         {
              var name = new Label ();
              name.SetBinding (Label.TextProperty, "Name");
-             DisplayAlert("{Binding Name}","aa","aa");
+             DisplayAlert(name,"aa","aa");
         }
     }
     
