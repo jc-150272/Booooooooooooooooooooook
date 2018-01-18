@@ -11,7 +11,7 @@
                         <TableSection>
 
                             <!-- 一般ページに遷移 -->
-                            <TextCell Text="一般" Tapped="Common" />
+                            <TextCell Text="一般"/>
 
                             <!-- バックアップページに遷移 -->
                             <TextCell Text="バックアップ復元" Tapped="Backup" />
