@@ -96,69 +96,14 @@ namespace book3
             }
 
             BookListView.ItemsSource = items;
-            BookListView.HasUnevenRows = true;
 
-            BookListView.ItemSelected += (s, e) => {
-                Book tmp;
-                if (_index != -1) {
-                    tmp = data.ar[_index];
-                    tmp.Expand = false;
-                    data.ar[_index] = tmp;
-                }
-
-                _index = data.ar.IndexOf(e.SelectedItem as OneData);
-                if (_index != -1) {
-                    tmp = data.ar[_index];
-                    tmp.Expand = true;
-                    data.ar[_index] = tmp;
-                }
-
-            };
-
+            void NavigateDetail(object sender, EventArgs e)
+        {
+             var name = new Label ();
+             name.SetBinding (Label.TextProperty, "Name");
+             DisplayAlert("{Binding Name}","aa","aa");
         }
-
-        class PreserveAttribute : System.Attribute{
-            public bool Conditional { get; set; }
-}
-        class MyCell : ViewCell {
-            }
-
-            View CreateExpandView() {
-
-            var name = new Label { FontSize = 12 };
-            name.SetBinding(Label.TextProperty, "Name");
-
-            var value = new Label { FontSize = 12 };
-            value.SetBinding(Label.TextProperty, "Value");
-
-            var layout = new StackLayout {
-                Children = { name,value }
-            };
-            return new StackLayout() {
-                Padding = new Thickness(5),
-                Orientation = StackOrientation.Horizontal //横に並べる
-            };
         }
-
-        protected override void OnBindingContextChanged() {
-            base.OnBindingContextChanged();
-            if (BindingContext == null) {
-                return;
-            }
-            var data = (Book)BindingContext;
-
-            var expand = data.Expand;
-
-            if (expand) {
-                Height = 150;
-                View = CreateExpandView();
-
-            }
-
-
-        }
-
-    }
 
     public class Book
     {
@@ -178,10 +123,9 @@ namespace book3
 
         public string BlueBook2 { get; set; }
 
-        public Book()
-    {
-        Expand = false; // <=詳細表示中かどうかのフラグ
-    }
+        public bool Expand { get; set; }
+
+
 
     }
 
