@@ -104,7 +104,7 @@ namespace book3
         Book book = (Book)BookListView.SelectedItem;
         String name = book.Name;
 
-        NavigationEventArgs.PushAsync(new CommonPage(name));
+        Navigation.PushAsync(new CommonPage(name));
         }
     }
 

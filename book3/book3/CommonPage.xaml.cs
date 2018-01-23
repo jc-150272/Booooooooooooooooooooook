@@ -15,7 +15,7 @@ namespace book3
         public CommonPage(String name)
         {
             InitializeComponent();
-            text1.text = name;
+            text1.Text = name;
         }
 
         /*private void On1(object sender, EventArgs e)
