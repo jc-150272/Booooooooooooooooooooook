@@ -100,7 +100,7 @@ namespace book3
 
     }
     
-    private void NavigateDetail(object sender, ItemTappedEventArgs e)
+    private void BookListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
 
         Book book = (Book)BookListView.SelectedItem;
