@@ -15,12 +15,12 @@ namespace book3
         public CommonPage(String name)
         {
             InitializeComponent();
-            text1 = name;
+            text1.text = name;
         }
 
-        private void On1(object sender, EventArgs e)
+        /*private void On1(object sender, EventArgs e)
         {
             DisplayAlert("おんちぇんじ", "やったー", "くそ");
-        }
+        }*/
     }
 }

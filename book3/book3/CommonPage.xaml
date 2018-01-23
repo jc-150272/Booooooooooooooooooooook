@@ -5,9 +5,8 @@
              Title="一般">
     <ContentPage.Content>
         <StackLayout>
-           <Label>
-               <Text=""x:Name="text1">
-           </Label>
+           <Label Text="aaa"
+                  x:Name="text1"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
