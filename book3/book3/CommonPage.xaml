@@ -7,6 +7,8 @@
         <StackLayout>
            <Label Text="aaa"
                   x:Name="text1"/>
+           <Label Text="aaa"
+                  x:Name="text2"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
