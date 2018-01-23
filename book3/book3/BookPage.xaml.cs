@@ -98,15 +98,17 @@ namespace book3
             BookListView.ItemsSource = items;
         }
 
-        
-        void NavigateDetail(object sender, ItemTappedEventArgs e)
-        {
-             var name = new Label();
-             name.SetBinding(Label.TextProperty,"Name");
-             Debug.WriteLine (name.Text);
-        }
     }
     
+    private void NavigateDetail(object sender, ItemTappedEventArgs e)
+        {
+
+        Book book = (Book)BookListView.SelectedItem;
+        String name = book.Name;
+
+        NavigationEventArgs.PushAsync(new CommonPage(name));
+}
+
 
     public class Book
     {

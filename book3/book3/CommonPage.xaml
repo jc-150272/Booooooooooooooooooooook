@@ -5,17 +5,9 @@
              Title="一般">
     <ContentPage.Content>
         <StackLayout>
-            <TableView Intent="Data">
-                <TableView.Root>
-                    <TableRoot>
-                        <TableSection>
-                            <SwitchCell Text="本棚表示でアイコン表示"
-                                        OnChanged="On1"/>
-                            <SwitchCell Text="本の連続登録"/>
-                        </TableSection>
-                    </TableRoot>
-                </TableView.Root>
-            </TableView>
+           <Label>
+               <Text=""x:Name="text1">
+           </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

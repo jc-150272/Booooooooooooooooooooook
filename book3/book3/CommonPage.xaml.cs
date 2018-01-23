@@ -12,9 +12,10 @@ namespace book3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CommonPage : ContentPage
     {
-        public CommonPage()
+        public CommonPage(String name)
         {
             InitializeComponent();
+            text1 = name;
         }
 
         private void On1(object sender, EventArgs e)
