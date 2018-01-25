@@ -38,6 +38,5 @@ namespace book3.iOS
 
             return System.IO.Path.Combine(libFolder, filename);
         }
-
     }
 }
