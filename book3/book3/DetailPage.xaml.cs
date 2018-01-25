@@ -11,17 +11,17 @@ namespace book3
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailPage : ContentPage
-    {
+	{
 
         // ボタンとスイッチの判定
         bool hantei1 = true;
         bool hantei2 = true;
         bool hantei3 = true;
 
-        public DetailPage (string isbn)
-		{
-			InitializeComponent ();
-            string ISBN = isbn; 
+        public DetailPage(string isbn)
+        {
+            InitializeComponent();
+            string ISBN = isbn;
         }
 
         // 読みたいボタンを点滅させる
