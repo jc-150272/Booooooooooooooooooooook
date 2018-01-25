@@ -9,27 +9,22 @@ namespace book3
 {
     public partial class App : Application
     {
-        //データベースのパスを格納
         public static string dbPath;
 
         public App(string dbPath)
         {
+
             //AppのdbPathに引数のパスを設定します
             App.dbPath = dbPath;
-
-
             InitializeComponent();
+            MainPage = new book3.MainPage();
 
-            //MainPage = new NavigationPage(new MainPage());
         }
-
         public App()
         {
             InitializeComponent();
 
-            var nav = new NavigationPage(new MainPage());
-
-            MainPage = nav;
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

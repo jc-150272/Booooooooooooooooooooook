@@ -11,6 +11,7 @@ namespace book3.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            global::ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
             //指定したファイルのパスを取得します。
             var dbPath = GetLocalFilePath("culculate.db3");
@@ -18,9 +19,9 @@ namespace book3.iOS
             //この段階ではまだエラーになります。
             LoadApplication(new App(dbPath));
 
+
             return base.FinishedLaunching(app, options);
         }
-
         public static string GetLocalFilePath(string filename)
         {
             //指定されたファイルのパスを取得します。なければ作成してそのパスを返却します
@@ -34,5 +35,12 @@ namespace book3.iOS
 
             return System.IO.Path.Combine(libFolder, filename);
         }
+
     }
 }
+
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using Foundation;
+using UIKit;
