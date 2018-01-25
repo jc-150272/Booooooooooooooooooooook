@@ -22,7 +22,7 @@
                                 <RowDefinition Height="33" />
                                 <RowDefinition Height="34" />
                                 <RowDefinition Height="33" />
-                            </Grid.RowDefinitions>
+                            </Grid.RowDefinitions> 
 
                             <!-- 2列にして幅を設定 -->
                             <Grid.ColumnDefinitions>
