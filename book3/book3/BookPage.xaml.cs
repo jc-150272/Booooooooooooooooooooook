@@ -98,14 +98,13 @@ namespace book3
             BookListView.ItemsSource = items;
         }
 
-        private void BookDetail(object sender, ItemTappedEventArgs e)
+        private void (object sender, ItemTappedEventArgs e)
         {
 
         Book book = (Book)BookListView.SelectedItem;
-        String name = book.Name;
         String isbn = book.ISBN;
 
-        Navigation.PushAsync(new CommonPage(name,isbn));
+        Navigation.PushAsync(new CommonPage(isbn));
         }
     }
 
