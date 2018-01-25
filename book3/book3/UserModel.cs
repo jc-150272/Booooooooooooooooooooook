@@ -5,7 +5,7 @@ using SQLite;
 //参考url http://dev-suesan.hatenablog.com/entry/2017/03/06/005206
 //SQLメソッドの参考url https://www.tmp1024.com/programming/use-sqlite
 
-namespace SamplePage
+namespace book3
 {
     //テーブル名を指定
     [Table("Book")]
