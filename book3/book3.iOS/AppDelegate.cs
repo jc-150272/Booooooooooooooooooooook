@@ -3,7 +3,7 @@
 using Foundation;
 using UIKit;
 
-namespace Book3.iOS
+namespace book3.iOS
 {
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
