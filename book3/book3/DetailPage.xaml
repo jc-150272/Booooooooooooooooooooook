@@ -11,7 +11,7 @@
             <StackLayout>
 
                 <!-- 本のタイトルを表示 -->
-                <Label Text="{Binding BookName}" Margin="30" FontSize="30"/>
+                <Label Text="本のタイトル" Margin="30" FontSize="30"/>
 
                 <!-- 横線を表示 -->
                 <BoxView Color="Gray" WidthRequest="1000" HeightRequest="1" />
