@@ -102,7 +102,7 @@ namespace book3
         {
 
         Book book = (Book)BookListView.SelectedItem;
-        String isbn = book.ISBN;
+        string isbn = book.ISBN;
 
         Navigation.PushAsync(new DetailPage(isbn));
         }

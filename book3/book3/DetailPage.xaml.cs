@@ -21,7 +21,7 @@ namespace book3
         public DetailPage(string isbn)
         {
             InitializeComponent();
-            string ISBN = isbn;
+            string Isbn = isbn;
         }
 
         // 読みたいボタンを点滅させる

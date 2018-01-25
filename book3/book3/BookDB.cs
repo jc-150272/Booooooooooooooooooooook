@@ -23,7 +23,7 @@ namespace book3
 
 
         //--------------------------insert文的なの--------------------------
-        public static void insertBook(string isbn, string title, string titleKana, string itemCaption, string author)
+        public static void InsertBook(string isbn, string title, string titleKana, string itemCaption, string author)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -46,7 +46,7 @@ namespace book3
 
         //BookテーブルのBookを削除するメソッド
         //--------------------------delete文的なの--------------------------
-        public static void deleteBook(string isbn)
+        public static void DeleteBook(string isbn)
         {
 
             //データベースに接続
@@ -71,7 +71,7 @@ namespace book3
 
         //-----------------------以下selectメソッド--------------------------
         //全部表示
-        public static List<BookDB> select_all()
+        public static List<BookDB> Select_all()
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
@@ -91,7 +91,7 @@ namespace book3
         }
 
         //titleのみ表示
-        public static List<BookDB> select_title()
+        public static List<BookDB> Select_title()
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
@@ -111,7 +111,7 @@ namespace book3
         }
 
         //titleをcountする
-        public static List<BookDB> select_title_count()
+        public static List<BookDB> Select_title_count()
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
