@@ -21,9 +21,9 @@ namespace book3
             InitializeComponent();
 
             ObservableCollection<Book> items = new ObservableCollection<Book>();
-            items.Add(new Book { Name = "John Doe", Value = 4.0, BlueBook = true, RedStar = true ,ISBN = 111111111 });
-            items.Add(new Book { Name = "Jane Doe", Value = 3.5, BlueBook = true, RedStar = false ,ISBN = 222222222 });
-            items.Add(new Book { Name = "Sammy Doe", Value = 2.5, BlueBook = false, RedStar = false, ISBN = 2222222222 });
+            items.Add(new Book { Name = "John Doe", Value = 4.0, BlueBook = true, RedStar = true ,ISBN = "111111111" });
+            items.Add(new Book { Name = "Jane Doe", Value = 3.5, BlueBook = true, RedStar = false ,ISBN = "222222222" });
+            items.Add(new Book { Name = "Sammy Doe", Value = 2.5, BlueBook = false, RedStar = false, ISBN = "222222222" });
 
             for (var i = 0; i < items.Count; i++)
             {
@@ -98,12 +98,12 @@ namespace book3
             BookListView.ItemsSource = items;
         }
 
-        private void SentVint(object sender, ItemTappedEventArgs e)
+        private void BookDetail(object sender, ItemTappedEventArgs e)
         {
 
         Book book = (Book)BookListView.SelectedItem;
         String name = book.Name;
-        int isbn = book.ISBN;
+        String isbn = book.ISBN;
 
         Navigation.PushAsync(new CommonPage(name,isbn));
         }
@@ -112,7 +112,7 @@ namespace book3
 
     public class Book
     {
-        public int ISBN { get; set; }
+        public string ISBN { get; set; }
 
         public string Name { get; set; }
 
