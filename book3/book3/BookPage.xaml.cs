@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Xml;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,15 +16,32 @@ namespace book3
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookPage : ContentPage
-    {
+    {        
+        public ObservableCollection<Book> items = new ObservableCollection<Book>();
         public BookPage()
         {
             InitializeComponent();
 
-            ObservableCollection<Book> items = new ObservableCollection<Book>();
-            items.Add(new Book { Name = "John Doe", Value = 4.0, BlueBook = true, RedStar = true ,ISBN = "111111111" });
-            items.Add(new Book { Name = "Jane Doe", Value = 3.5, BlueBook = true, RedStar = false ,ISBN = "222222222" });
-            items.Add(new Book { Name = "Sammy Doe", Value = 2.5, BlueBook = false, RedStar = false, ISBN = "222222222" });
+             if (UserModel.selectUser() != null)
+            {
+                var query = UserModel.selectUser();
+                var List1 = new List<String>();
+                //*をリストにぶち込んで個数分addするのでもいいのでは
+                foreach (var user in query)
+                {
+                    List1.Add(user.Title);
+                }
+                for (var j = 0; j < query.Count; j++)
+                {
+                    items.Add(new Book { Name = List1[j], Value = 2.5 });
+
+                }
+            }
+            else
+            {
+                items.Add(new Book { Name = "空やで" });
+            }
+
 
             for (var i = 0; i < items.Count; i++)
             {
@@ -98,19 +116,8 @@ namespace book3
             BookListView.ItemsSource = items;
         }
 
-        private void BookDetail(object sender, ItemTappedEventArgs e)
+        public class Book
         {
-
-        Book book = (Book)BookListView.SelectedItem;
-        string isbn = book.ISBN;
-
-        Navigation.PushAsync(new DetailPage(isbn));
-        }
-    }
-
-
-    public class Book
-    {
         public string ISBN { get; set; }
 
         public string Name { get; set; }
@@ -128,8 +135,57 @@ namespace book3
         public string BlueBook2 { get; set; }
 
         public bool Expand { get; set; }
+        }
 
+        private void BookDetail(object sender, ItemTappedEventArgs e)
+        {
+
+        Book book = (Book)BookListView.SelectedItem;
+        string isbn = book.ISBN;
+
+        Navigation.PushAsync(new DetailPage(isbn));
+        }
+    
+        /// <summary>
+        /// リフレッシュ時に呼ばれる
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void OnRefreshing(object sender, EventArgs e)
+        {
+            //2秒処理を待つ
+            await Task.Delay(2000);
+            items.Clear();
+
+            if (UserModel.selectUser() != null)
+            {
+                var query = UserModel.selectUser();
+                var List1 = new List<String>();
+                //*をリストにぶち込んで個数分addするのでもいいのでは
+                foreach (var user in query)
+                {
+                    List1.Add(user.Title);
+                }
+                for (var j = 0; j < query.Count; j++)
+                {
+                    items.Add(new Book { Name = List1[j], /*Value = 2.5*/ });
+
+                }
+            }
+            else
+            {
+                items.Add(new Book { Name = "空やで"});
+            }
+
+            BookListView.ItemsSource = items;
+            
+
+            //リフレッシュを止める
+            this.BookListView.IsRefreshing = false;
+        }
     }
+
+
 
 }
     
