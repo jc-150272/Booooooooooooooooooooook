@@ -14,7 +14,7 @@ namespace SamplePage
         //プライマリキー　自動採番されます
         [PrimaryKey]
         //カラムっていうのは列と同じ
-        //idカラム
+        //idカラム 
         public string ISBN { get; set; }
         //名前カラム
         public string Title { get; set; }
