@@ -20,12 +20,10 @@
                 <BoxView Color="White" WidthRequest="500" HeightRequest="350" />
 
                 <!-- 本のデータ -->
-                <Label Text="基礎データ" Margin="15" FontSize="20"/>
-                <Label Text="タイプ" />
-                <Label Text="発売日" />
-                <Label Text="出版社" />
-                <Label Text="カテゴリ" />
-
+                <Label Text="著者名:" Margin="30,15" FontSize="20"/>
+                <Label Text="出版社:" Margin="30,15" FontSize="20"/>
+                <Label Text="ジャンル:" Margin="30,15" FontSize="20"/>
+                <Label Text="発売日:" Margin="30,15" FontSize="20"/>
             </StackLayout>
 
             <!-- 本の画像を表示 -->
@@ -42,7 +40,7 @@
             <Label x:Name="unread2" Text="未読" AbsoluteLayout.LayoutBounds=".515,.35,32,32" AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
             <!-- 本の評価を表示 -->
-            <Image Source="star_test.gif" AbsoluteLayout.LayoutBounds=".32,.25,120,120" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Image Source="value_5.png" AbsoluteLayout.LayoutBounds=".32,.25,120,120" AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
             <!-- 横線を表示 -->
             <BoxView Color="Black" AbsoluteLayout.LayoutBounds=".5,.5,1000,2" AbsoluteLayout.LayoutFlags="PositionProportional"/>
