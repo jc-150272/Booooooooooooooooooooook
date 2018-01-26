@@ -242,7 +242,7 @@ namespace book3
             }
         }
 
-                public static List<UserModel> Gray_Book(string isbn)
+        public static List<UserModel> Gray_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
@@ -269,7 +269,7 @@ namespace book3
                 {
                     //データベースに指定したSQLを発行します
                     //return db.Query<UserModel>("SELECT * FROM [Book] order by [_id] desc limit 15");
-                    return db.Query<UserModel>("SELECT * FROM [Book] where ISBN =" + isbn );
+                    return db.Query<UserModel>("SELECT * FROM [Book] WHERE ISBN =" + isbn );
 
                 }
                 catch (Exception e)

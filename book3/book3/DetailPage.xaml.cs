@@ -39,18 +39,123 @@ namespace book3
                 foreach(var book in query){
                 title = book.Title;
                 }
-                DisplayAlert(title,"aa","aa");
             }else{
                 DisplayAlert("表なし","表なし","OK");
             }
             
-
             /*
             foreach(var book in query){
                 title = book.Title;
             }*/
           
         }
+
+        var stackLayout = new StackLayout
+{
+    WidthRequest = 400,
+    VerticalOptions = LayoutOptions.Center,
+    HorizontalOptions = LayoutOptions.Center,
+    Children =
+    {
+        //ラベルクラスのみのインスタンス生成
+        new Label(),
+ 
+        //ラベルのテキストに文字を設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+        },
+ 
+        //ラベルにフォントを設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            Font = Font.Default
+        },
+ 
+        //テキストを太字に設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            FontAttributes = FontAttributes.Bold,
+        },
+ 
+        //フォントファミリを「Gulim」に設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            FontFamily = "Gulim",
+        },
+ 
+        //フォントサイズを「20」に設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            FontSize = 20,
+        },
+ 
+        //FormattedStringプロパティの設定
+        new Label
+        {
+            FormattedText = new FormattedString
+            {
+                Spans =
+                {
+                    new Span
+                    {
+                        Text = "あいうえお",
+                    },
+                    new Span
+                    {
+                        Text = "AIUEO",
+                        FontAttributes = FontAttributes.Bold,
+                    },
+                    new Span
+                    {
+                        Text = "aiueo",
+                        ForegroundColor = Color.Yellow,
+                    },
+                    new Span
+                    {
+                        Text = "曖昧模糊",
+                        FontSize = 30,
+                    },
+                },
+            },
+        },
+ 
+        //テキストを中央寄せに設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            HorizontalTextAlignment = TextAlignment.Center,
+        },
+ 
+        //折り返し方法を「CharacterWrap」に設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            LineBreakMode = LineBreakMode.CharacterWrap,
+        },
+        
+        //テキストの色を赤色に設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            TextColor = Color.Red,
+        },
+ 
+        
+        //テキストの高さを中央寄せに設定
+        new Label
+        {
+            Text = "あいうえおAIUEOaiueo曖昧模糊",
+            VerticalTextAlignment = TextAlignment.Center,
+        },
+    },
+};
+ 
+this.Content = stackLayout;
 
         // 読みたいボタンを点滅させる
         private void OnImageClicked1(object sender, EventArgs e)
