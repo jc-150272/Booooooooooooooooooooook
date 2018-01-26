@@ -22,6 +22,8 @@ namespace book3
         {
             InitializeComponent();
 
+            UserModel.insertUser("111111111111", "美味しんぼ", "おいしんぼ","a");
+
              if (UserModel.selectUser() != null)
             {
                 var query = UserModel.selectUser();
