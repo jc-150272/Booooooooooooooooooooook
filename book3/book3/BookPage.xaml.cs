@@ -147,6 +147,8 @@ namespace book3
 
         Navigation.PushAsync(new DetailPage(isbn));
         }
+
+
     
         /// <summary>
         /// リフレッシュ時に呼ばれる

@@ -39,10 +39,11 @@ namespace book3
                 foreach(var book in query){
                 title = book.Title;
                 }
+                DisplayAlert(title,"aa","aa");
             }else{
                 DisplayAlert("表なし","表なし","OK");
             }
-            DisplayAlert(Isbn,"表なし","OK");
+            
 
             /*
             foreach(var book in query){
