@@ -16,12 +16,12 @@ namespace book3
         // ボタンとスイッチの判定
         bool hantei1 = true;
         bool hantei2 = true;
-        bool hantei3 = true;
+        string Isbn;
 
         public DetailPage(string isbn)
         {
             InitializeComponent();
-            string Isbn = isbn;
+            this.Isbn = isbn;
         }
 
         // 読みたいボタンを点滅させる
@@ -29,14 +29,14 @@ namespace book3
         {
             if (hantei1 == true)
             {
-                UserModel.okiniiri1(Isbn);
+                UserModel.okiniiri1(this.Isbn);
                 this.image1.Image = "blue_book_72.png";
                 hantei1 = false;
             }
 
             else
             {
-                UserModel.okiniiri2(Isbn);
+                UserModel.okiniiri2(this.Isbn);
                 this.image1.Image = "gray_book_72.png";
                 hantei1 = true;
             }
