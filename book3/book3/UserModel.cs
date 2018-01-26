@@ -6,7 +6,7 @@ using SQLite;
 //SQLメソッドの参考url https://www.tmp1024.com/programming/use-sqlite
 
 namespace book3
-{
+{ 
     //テーブル名を指定
     [Table("Book")]
     public class UserModel
