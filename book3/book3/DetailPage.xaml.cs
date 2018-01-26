@@ -30,13 +30,21 @@ namespace book3
         {
             InitializeComponent();
             this.Isbn = isbn;
-            /*
-            var query = UserModel.selectUserISBN(this.Isbn);
 
+
+            //var query = UserModel.selectUserISBN(this.Isbn);
+            if(UserModel.selectUserISBN(this.Isbn) != null){
+                var query = UserModel.selectUserISBN(this.Isbn);
+
+                foreach(var book in query){
+                title = book.Title;
+                }
+            }
+
+            /*
             foreach(var book in query){
                 title = book.Title;
-            }
-            */
+            }*/
           
         }
 
