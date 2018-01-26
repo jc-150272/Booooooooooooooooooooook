@@ -14,47 +14,61 @@ namespace book3
 	{
 
         // ボタンとスイッチの判定
-        bool hantei1 = true;
-        bool hantei2 = true;
         string Isbn;
+        string title;
+        string titlekana;
+        string itemcaption;
+        string author;
+        string publishername;
+        string genre;
+        int value;
+        bool read;
+        bool redstar;
+        bool bluebook;
 
         public DetailPage(string isbn)
         {
             InitializeComponent();
             this.Isbn = isbn;
+            var query = UserModel.selectUserISBN(this.isbn);
+
+            foreach(var book in query){
+                title = book.Title;
+            }
+            /*ここからわかんね上の変数に全部データを格納したい*/
         }
 
         // 読みたいボタンを点滅させる
         private void OnImageClicked1(object sender, EventArgs e)
         {
-            if (hantei1 == true)
+            if (bluebook == true)
             {
-                UserModel.okiniiri1(this.Isbn);
+                UserModel.Blue_Book(this.Isbn);
                 this.image1.Image = "blue_book_72.png";
-                hantei1 = false;
+                bluebook = false;
             }
 
             else
             {
-                UserModel.okiniiri2(this.Isbn);
+                UserModel.Gray_Book(this.Isbn);
                 this.image1.Image = "gray_book_72.png";
-                hantei1 = true;
+                bluebook = true;
             }
         }
 
         // お気にいりボタンを点滅させる
         private void OnImageClicked2(object sender, EventArgs e)
         {
-            if (hantei2 == true)
+            if (redstar == true)
             {
                 this.image2.Image = "red_star_72.png";
-                hantei2 = false;
+                redstar = false;
             }
 
             else
             {
                 this.image2.Image = "gray_star_72.png";
-                hantei2 = true;
+                redstar = true;
             }
         }
 

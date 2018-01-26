@@ -11,7 +11,7 @@
             <StackLayout>
 
                 <!-- 本のタイトルを表示 -->
-                <Label Text="本のタイトル" Margin="30" FontSize="30"/>
+                <Label Text="{Binding title}" Margin="30" FontSize="30"/>
 
                 <!-- 横線を表示 -->
                 <BoxView Color="Gray" WidthRequest="1000" HeightRequest="1" />
@@ -30,10 +30,10 @@
             <BoxView Color="Blue" AbsoluteLayout.LayoutBounds=".1,.25,130,180" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
             <!-- 読みたいボタンを表示 -->
-            <Button x:Name="image1" Image="gray_book_72.png" Clicked="OnImageClicked1" AbsoluteLayout.LayoutBounds=".4,.2,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <Button x:Name="image1" Image="{Binding BookImage}" Clicked="OnImageClicked1" AbsoluteLayout.LayoutBounds=".4,.2,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
             <!-- お気に入りボタンを表示 -->
-            <Button x:Name="image2" Image="gray_star_72.png" Clicked="OnImageClicked2" AbsoluteLayout.LayoutBounds=".3,.2,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <Button x:Name="image2" Image="{Binding StarImage}" Clicked="OnImageClicked2" AbsoluteLayout.LayoutBounds=".3,.2,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
             <!-- 未読・既読スイッチを表示 -->
             <Switch x:Name="unread1" Toggled="OnToggled"  AbsoluteLayout.LayoutBounds=".5,.3,32,32" AbsoluteLayout.LayoutFlags="PositionProportional"/>

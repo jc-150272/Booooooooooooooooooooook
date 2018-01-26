@@ -123,6 +123,16 @@ namespace book3
 
         public string ItemCaption { get; set; }
 
+        public string Author { get; set; }
+
+        public string publisherName { get; set; }
+
+        public string Genre { get; set; }
+
+        public int Value { get; set; }
+
+        public bool Read { get; set; }
+
         public bool RedStar { get; set; }
 
         public bool BlueBook { get; set; }
@@ -216,13 +226,13 @@ namespace book3
             }
         }
 
-        public static List<UserModel> okiniiri1(string isbn)
+        public static List<UserModel> Blue_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
-                    return db.Query<UserModel>("UPDATE [Book] set Redstar = true where ISBN =" + isbn );
+                    return db.Query<UserModel>("UPDATE [Book] set BlueBook = true where ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {
@@ -232,13 +242,13 @@ namespace book3
             }
         }
 
-                public static List<UserModel> okiniiri2(string isbn)
+                public static List<UserModel> Gray_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
-                    return db.Query<UserModel>("UPDATE [Book] set Redstar = false where ISBN =" + isbn );
+                    return db.Query<UserModel>("UPDATE [Book] set BlueBook = false where ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {
@@ -248,5 +258,27 @@ namespace book3
             }
         }
 
+                //Userテーブルの行データを取得します
+        //--------------------------select文的なの--------------------------
+        public static List<UserModel> selectUserISBN(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+
+                try
+                {
+                    //データベースに指定したSQLを発行します
+                    //return db.Query<UserModel>("SELECT * FROM [Book] order by [_id] desc limit 15");
+                    return db.Query<UserModel>("SELECT * FROM [Book] where ISBN =" + isbn );
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
     }
 }
