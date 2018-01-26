@@ -122,6 +122,10 @@ namespace book3
         public string TitleKana { get; set; }
 
         public string ItemCaption { get; set; }
+
+        public bool RedStar { get; set; }
+
+        public bool BlueBook { get; set; }
         //Userテーブルに行追加するメソッドです
         //------------------------Insert文的なの--------------------------
 
@@ -203,6 +207,38 @@ namespace book3
                 try
                 {
                     return db.Query<UserModel>("SELECT Name FROM[Book] where [_id] =" + id + " limit 15");
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
+
+        public static List<UserModel> okiniiri1(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    return db.Query<UserModel>("UPDATE [Book] set Redstar = true where ISBN =" + isbn );
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
+
+                public static List<UserModel> okiniiri2(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    return db.Query<UserModel>("UPDATE [Book] set Redstar = false where ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {

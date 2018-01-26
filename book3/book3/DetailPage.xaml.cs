@@ -29,12 +29,14 @@ namespace book3
         {
             if (hantei1 == true)
             {
+                UserModel.okiniiri1(Isbn);
                 this.image1.Image = "blue_book_72.png";
                 hantei1 = false;
             }
 
             else
             {
+                UserModel.okiniiri2(Isbn);
                 this.image1.Image = "gray_book_72.png";
                 hantei1 = true;
             }
