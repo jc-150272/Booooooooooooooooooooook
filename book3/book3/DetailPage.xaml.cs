@@ -30,12 +30,14 @@ namespace book3
         {
             InitializeComponent();
             this.Isbn = isbn;
+            /*
             var query = UserModel.selectUserISBN(this.Isbn);
 
             foreach(var book in query){
                 title = book.Title;
             }
-            /*ここからわかんね上の変数に全部データを格納したい*/
+            */
+          
         }
 
         // 読みたいボタンを点滅させる
