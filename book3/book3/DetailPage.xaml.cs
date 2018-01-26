@@ -30,7 +30,7 @@ namespace book3
         {
             InitializeComponent();
             this.Isbn = isbn;
-            var query = UserModel.selectUserISBN(this.isbn);
+            var query = UserModel.selectUserISBN(this.Isbn);
 
             foreach(var book in query){
                 title = book.Title;
