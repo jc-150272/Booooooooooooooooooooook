@@ -1,15 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.IO;
-using System.Diagnostics;
-using System.Threading;
-using System.Data.SQLite;
+using SQLite;
 
 //参考url http://dev-suesan.hatenablog.com/entry/2017/03/06/005206
 //SQLメソッドの参考url https://www.tmp1024.com/programming/use-sqlite
@@ -239,17 +230,13 @@ namespace book3
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
-                db.Open();
- 
-                using (var transaction = db.BeginTransaction())
+                try{
+                   db.Update("update [Book] set BlueBook = true where ISBN =" + isbn); 
+                }
+                catch (Exception e)
                 {
-                    using (SQLiteCommand cmd = db.CreateCommand())
-                    {
-                        cmd.CommandText = "update [Book] set BlueBook = true where ISBN = @ISBN";
-                        cmd.Parameters.Add(new SQLiteParameter("@ISBN", isbn));
-                        cmd.ExecuteNonQuery();
-                    }
-                    transaction.Commit();
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
                 }
             }
         }
@@ -258,17 +245,13 @@ namespace book3
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
-                db.Open();
- 
-                using (var transaction = db.BeginTransaction())
+                try{
+                    db.Update("update [Book] set BlueBook = false where ISBN =" + isbn);
+                }
+                catch (Exception e)
                 {
-                    using (SQLiteCommand cmd = db.CreateCommand())
-                    {
-                        cmd.CommandText = "update [Book] set BlueBook = false where ISBN = @ISBN";
-                        cmd.Parameters.Add(new SQLiteParameter("@ISBN", isbn));
-                        cmd.ExecuteNonQuery();
-                    }
-                    transaction.Commit();
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
                 }
             }
         }
