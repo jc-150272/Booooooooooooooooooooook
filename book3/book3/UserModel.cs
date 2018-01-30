@@ -231,7 +231,8 @@ namespace book3
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try{                   
-                   db.Execute("update [Book] set BlueBook = true where ISBN =?",isbn);                
+                   db.Execute("update [Book] set BlueBook = true where ISBN =?",isbn);  
+                   db.Commit();
                 }
                 catch (Exception e)
                 {
@@ -247,6 +248,7 @@ namespace book3
             {
                 try{
                     db.Execute("update [Book] set BlueBook = false where ISBN =?",isbn);
+                    db.Commit();
                 }
                 catch (Exception e)
                 {
