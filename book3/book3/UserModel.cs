@@ -232,7 +232,7 @@ namespace book3
             {
                 try
                 {                 
-                    db.Query("UPDATE [Book] SET BlueBook = true WHERE ISBN =" + isbn );
+                    db.Query<UserModel>("UPDATE [Book] SET BlueBook = true WHERE ISBN =" + isbn );
                     //db.Update(new UserModel(){ BlueBook = true });
 
 
@@ -251,7 +251,7 @@ namespace book3
             {
                 try
                 {
-                    db.Query("UPDATE [Book] SET BlueBook = false WHERE ISBN =" + isbn );
+                    db.Query<UserModel>("UPDATE [Book] SET BlueBook = false WHERE ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {
