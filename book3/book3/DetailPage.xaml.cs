@@ -36,17 +36,22 @@ namespace book3
 
                 foreach(var book in query){
                 title = book.Title;
+                redstar = book.RedStar;
                 }
             }else{
                 DisplayAlert("表なし","表なし","OK");
             }
             titledayo.Text = title;
             
-            /*
-            foreach(var book in query){
-                title = book.Title;
-            }*/
+            if (redstar == true)
+            {
+                this.image2.Image = "red_star_72.png";
+            }
           
+            else
+            {
+                this.image2.Image = "gray_star_72.png";
+            }
         }
 
 
