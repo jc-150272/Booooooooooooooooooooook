@@ -31,8 +31,8 @@ namespace book3
             InitializeComponent();
             //var query = UserModel.selectUserISBN(this.Isbn);
             
-            if(UserModel.selectUserISBN(Isbn) != null){
-                var query = UserModel.selectUserISBN(Isbn);
+            if(UserModel.selectUserISBN(isbn) != null){
+                var query = UserModel.selectUserISBN(isbn);
 
                 foreach(var book in query){
                 title = book.Title;
