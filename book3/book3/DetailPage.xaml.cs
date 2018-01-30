@@ -31,11 +31,13 @@ namespace book3
             InitializeComponent();
             //var query = UserModel.selectUserISBN(this.Isbn);
             
+            this.Isbn = isbn;
             if(UserModel.selectUserISBN(isbn) != null){
                 var query = UserModel.selectUserISBN(isbn);
 
                 foreach(var book in query){
                 title = book.Title;
+                bluebook = book.BlueBook;
                 redstar = book.RedStar;
                 }
             }else{
@@ -43,6 +45,17 @@ namespace book3
             }
             titledayo.Text = title;
             
+            if (bluebook == true)
+            {
+                this.image1.Image = "blue_book_72.png";
+                bluebook = false;
+            }
+
+            else
+            {
+                this.image1.Image = "gray_book_72.png";
+            }
+
             if (redstar == true)
             {
                 this.image2.Image = "red_star_72.png";
@@ -52,6 +65,7 @@ namespace book3
             {
                 this.image2.Image = "gray_star_72.png";
             }
+
         }
 
 
@@ -60,15 +74,15 @@ namespace book3
         {
             if (bluebook == true)
             {
-                UserModel.Blue_Book(this.Isbn);
-                this.image1.Image = "blue_book_72.png";
+                UserModel.Blue_Book(Isbn);
+                this.image1.Image = "gray_book_72.png";
                 bluebook = false;
             }
 
             else
             {
-                UserModel.Gray_Book(this.Isbn);
-                this.image1.Image = "gray_book_72.png";
+                UserModel.Gray_Book(Isbn);
+                this.image1.Image = "blue_book_72.png";
                 bluebook = true;
             }
         }
