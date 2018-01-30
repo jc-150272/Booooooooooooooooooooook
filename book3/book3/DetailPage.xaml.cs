@@ -29,9 +29,8 @@ namespace book3
         public DetailPage(string isbn)
         {
             InitializeComponent();
-            titledayo.Text = isbn;
             //var query = UserModel.selectUserISBN(this.Isbn);
-            /*
+            
             if(UserModel.selectUserISBN(Isbn) != null){
                 var query = UserModel.selectUserISBN(Isbn);
 
@@ -41,6 +40,7 @@ namespace book3
             }else{
                 DisplayAlert("表なし","表なし","OK");
             }
+            titledayo.Text = title;
             
             /*
             foreach(var book in query){

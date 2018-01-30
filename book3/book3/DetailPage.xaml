@@ -11,7 +11,7 @@
             <StackLayout>
 
                 <!-- 本のタイトルを表示 -->
-                <Label Text= "{Binding Isbn}" Margin="30" FontSize="30" x:Name="titledayo"/>
+                <Label Text= "title" Margin="30" FontSize="30" x:Name="titledayo"/>
 
                 <!-- 横線を表示 -->
                 <BoxView Color="Gray" WidthRequest="1000" HeightRequest="1" />
