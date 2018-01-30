@@ -33,6 +33,7 @@ namespace book3
 
 
             //var query = UserModel.selectUserISBN(this.Isbn);
+            /*
             if(UserModel.selectUserISBN(Isbn) != null){
                 var query = UserModel.selectUserISBN(Isbn);
 
@@ -42,7 +43,7 @@ namespace book3
             }else{
                 DisplayAlert("表なし","表なし","OK");
             }
-            
+            */
             /*
             foreach(var book in query){
                 title = book.Title;
