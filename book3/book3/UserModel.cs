@@ -232,9 +232,9 @@ namespace book3
             {
                 try
                 {
-                    db.Update<UserModel>("[Book]",cv,"ISBN =" + isbn ,null);
                     ContentValues cv = new ContentValues();
                     cv.put("BlueBook", true);
+                    db.Update("[Book]",cv,"ISBN =" + isbn ,null);
                 }
                 catch (Exception e)
                 {
