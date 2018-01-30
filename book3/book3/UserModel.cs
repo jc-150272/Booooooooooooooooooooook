@@ -226,7 +226,7 @@ namespace book3
             }
         }
 
-        public static Blue_Book(string isbn)
+        public static void Blue_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
@@ -241,7 +241,7 @@ namespace book3
             }
         }
 
-        public static Gray_Book(string isbn)
+        public static void Gray_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
