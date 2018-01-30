@@ -1,6 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using SQLite;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+using System.Threading;
+using System.Data.SQLite;
 
 //参考url http://dev-suesan.hatenablog.com/entry/2017/03/06/005206
 //SQLメソッドの参考url https://www.tmp1024.com/programming/use-sqlite
