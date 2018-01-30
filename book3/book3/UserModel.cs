@@ -226,13 +226,13 @@ namespace book3
             }
         }
 
-        public static List<UserModel> Blue_Book(string isbn)
+        public static void Blue_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {                 
-                    db.Query<UserModel>("UPDATE [Book] SET BlueBook = true where ISBN =" + isbn );
+                    db.Query<UserModel>("UPDATE [Book] SET BlueBook = true WHERE ISBN =" + isbn );
                     //db.Update(new UserModel(){ BlueBook = true });
 
 
@@ -245,13 +245,13 @@ namespace book3
             }
         }
 
-        public static List<UserModel> Gray_Book(string isbn)
+        public static void Gray_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
                 {
-                    return db.Query<UserModel>("UPDATE [Book] set BlueBook = false where ISBN =" + isbn );
+                    db.Query<UserModel>("UPDATE [Book] SET BlueBook = false WHERE ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {
