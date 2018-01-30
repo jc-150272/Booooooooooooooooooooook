@@ -250,9 +250,7 @@ namespace book3
             {
                 try
                 {
-                    db.Update<UserModel>("[Book]",cv,"ISBN =" + isbn ,null);
-                    ContentValues cv = new ContentValues();
-                    cv.put("BlueBook", false);
+
                 }
                 catch (Exception e)
                 {
