@@ -25,6 +25,7 @@ namespace book3
         bool read;
         bool redstar;
         bool bluebook;
+        bool bluebook2
 
         public DetailPage(string isbn)
         {
@@ -76,6 +77,13 @@ namespace book3
                 UserModel.Gray_Book(Isbn);
                 this.image1.Image = "gray_book_72.png";
                 bluebook = false;
+                var query = UserModel.selectUserISBN(Isbn);
+                foreach(var book in query){
+                bluebook2 = book.BlueBook;
+                }
+                if(bluebook2 == false){
+                    DisplayAlert("falseが格納されてるよ","BB","CC");
+                }
             }
 
             else
@@ -83,6 +91,13 @@ namespace book3
                 UserModel.Blue_Book(Isbn);
                 this.image1.Image = "blue_book_72.png";
                 bluebook = true;
+                var query = UserModel.selectUserISBN(Isbn);
+                foreach(var book in query){
+                bluebook2 = book.BlueBook;
+                }
+                if(bluebook2 == true){
+                    DisplayAlert("trueが格納されてるよ","BB","CC");
+                }
             }
         }
 
