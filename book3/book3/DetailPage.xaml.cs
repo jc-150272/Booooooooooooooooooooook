@@ -31,7 +31,7 @@ namespace book3
             InitializeComponent();
             //var query = UserModel.selectUserISBN(this.Isbn);
             
-            this.Isbn = isbn;
+            Isbn = isbn;
             if(UserModel.selectUserISBN(isbn) != null){
                 var query = UserModel.selectUserISBN(isbn);
 
@@ -48,7 +48,6 @@ namespace book3
             if (bluebook == true)
             {
                 this.image1.Image = "blue_book_72.png";
-                bluebook = false;
             }
 
             else
@@ -74,14 +73,14 @@ namespace book3
         {
             if (bluebook == true)
             {
-                UserModel.Blue_Book(Isbn);
+                UserModel.Gray_Book(Isbn);
                 this.image1.Image = "gray_book_72.png";
                 bluebook = false;
             }
 
             else
             {
-                UserModel.Gray_Book(Isbn);
+                UserModel.Blue_Book(Isbn);
                 this.image1.Image = "blue_book_72.png";
                 bluebook = true;
             }
