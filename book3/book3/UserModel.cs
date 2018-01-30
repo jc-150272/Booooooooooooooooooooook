@@ -231,8 +231,11 @@ namespace book3
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try
-                {
-                    return db.Query<UserModel>("UPDATE [Book] SET BlueBook = true where ISBN =" + isbn );
+                {                 
+                    db.Query<UserModel>("UPDATE [Book] SET BlueBook = true where ISBN =" + isbn );
+                    //db.Update(new UserModel(){ BlueBook = true });
+
+
                 }
                 catch (Exception e)
                 {
