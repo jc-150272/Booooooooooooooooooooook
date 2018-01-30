@@ -230,21 +230,40 @@ namespace book3
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
-                try
-                {                 
-                    db.Execute("UPDATE [Book] SET BlueBook = true WHERE ISBN =" + isbn,2);
-                    //db.Update(new UserModel(){ BlueBook = true });
-                  
-
-                }
-                catch (Exception e)
+                db.Open();
+ 
+                using (var transaction = db.BeginTransaction())
                 {
-                    db.Rollback();
-                    System.Diagnostics.Debug.WriteLine(e);
+                    using (SQLiteCommand cmd = db.CreateCommand())
+                    {
+                        cmd.CommandText = "update [Book] set BlueBook = true where ISBN = @ISBN";
+                        cmd.Parameters.Add(new SQLiteParameter("@ISBN", isbn));
+                        cmd.ExecuteNonQuery();
+                    }
+                    transaction.Commit();
                 }
             }
         }
 
+        public static void Gray_Book(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                db.Open();
+ 
+                using (var transaction = db.BeginTransaction())
+                {
+                    using (SQLiteCommand cmd = db.CreateCommand())
+                    {
+                        cmd.CommandText = "update [Book] set BlueBook = false where ISBN = @ISBN";
+                        cmd.Parameters.Add(new SQLiteParameter("@ISBN", isbn));
+                        cmd.ExecuteNonQuery();
+                    }
+                    transaction.Commit();
+                }
+            }
+        }
+/*
         public static void Gray_Book(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -261,6 +280,7 @@ namespace book3
                 }
             }
         }
+*/
 
                 //Userテーブルの行データを取得します
         //--------------------------select文的なの--------------------------
