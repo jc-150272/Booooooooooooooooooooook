@@ -232,9 +232,7 @@ namespace book3
             {
                 try
                 {
-                    ContentValues cv = new ContentValues();
-                    cv.put("BlueBook", true);
-                    db.Update("[Book]",cv,"ISBN =" + isbn ,null);
+                    return db.Query<UserModel>("UPDATE [Book] SET BlueBook = true where ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {
@@ -250,7 +248,7 @@ namespace book3
             {
                 try
                 {
-
+                    return db.Query<UserModel>("UPDATE [Book] set BlueBook = false where ISBN =" + isbn );
                 }
                 catch (Exception e)
                 {
