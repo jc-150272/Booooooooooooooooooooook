@@ -27,15 +27,17 @@ namespace book3
              if (UserModel.selectUser() != null)
             {
                 var query = UserModel.selectUser();
-                var List1 = new List<String>();
+                var titleList = new List<String>();
+                var isbnList = new List<String>();
                 //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
-                    List1.Add(user.Title);
+                    titleList.Add(user.Title);
+                    isbnList.Add(user.ISBN);
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
-                    items.Add(new Book { Name = List1[j], Value = 2.5 });
+                    items.Add(new Book { Name = titleList[j],ISBN = isbnList[j],Value = 2.5 });
 
                 }
             }
@@ -164,15 +166,17 @@ namespace book3
             if (UserModel.selectUser() != null)
             {
                 var query = UserModel.selectUser();
-                var List1 = new List<String>();
+                var titleList = new List<String>();
+                var isbnList = new List<String>();
                 //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
-                    List1.Add(user.Title);
+                    titleList.Add(user.Title);
+                    isbnList.Add(user.ISBN);
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
-                    items.Add(new Book { Name = List1[j], /*Value = 2.5*/ });
+                    items.Add(new Book { Name = titleList[j],ISBN = isbnList[j] /*Value = 2.5*/ });
 
                 }
             }
