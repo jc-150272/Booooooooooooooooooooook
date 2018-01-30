@@ -25,7 +25,7 @@ namespace book3
         bool read;
         bool redstar;
         bool bluebook;
-        bool bluebook2
+        bool bluebook2;
 
         public DetailPage(string isbn)
         {
