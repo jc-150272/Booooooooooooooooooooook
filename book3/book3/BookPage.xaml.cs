@@ -132,11 +132,11 @@ namespace book3
 
         public int RedStar { get; set; }
 
-        public int RedStar2 { get; set; }
+        public string RedStar2 { get; set; }
 
         public int BlueBook { get; set; }
 
-        public int BlueBook2 { get; set; }
+        public string BlueBook2 { get; set; }
 
         public bool Expand { get; set; }
         }

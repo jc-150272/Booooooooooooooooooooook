@@ -104,16 +104,16 @@ namespace book3
         // お気にいりボタンを点滅させる
         private void OnImageClicked2(object sender, EventArgs e)
         {
-            if (redstar == true)
+            if (redstar == 1)
             {
                 this.image2.Image = "red_star_72.png";
-                redstar = false;
+                redstar = 0;
             }
 
             else
             {
                 this.image2.Image = "gray_star_72.png";
-                redstar = true;
+                redstar = 1;
             }
         }
 
