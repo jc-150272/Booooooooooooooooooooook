@@ -122,12 +122,12 @@ namespace book3
         {
             if (unread1.IsToggled == true)
             {
-                UserModel.Read(Isbn);
+                UserModel.ReadBook(Isbn);
                 this.unread2.Text = "既読";
             }
             if (unread1.IsToggled == false)
             {
-                UserModel.Unread(Isbn);
+                UserModel.UnreadBook(Isbn);
                 this.unread2.Text = "未読";
             }
         }

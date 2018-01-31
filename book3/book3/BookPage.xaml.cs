@@ -29,11 +29,16 @@ namespace book3
                 var query = UserModel.selectUser();
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
+                var RedList = new List<String>();
+                var BlueList = new List<String>();
                 //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
                     titleList.Add(user.Title);
                     isbnList.Add(user.ISBN);
+                    RedList.Add(user.RedStar);
+                    BlueList.Add(user.BlueBook);
+
                 }
                 for (var j = 0; j < query.Count; j++)
                 {

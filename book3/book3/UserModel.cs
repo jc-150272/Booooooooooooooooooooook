@@ -290,7 +290,7 @@ namespace book3
             }
         }
 
-        public static void Read(string isbn)
+        public static void ReadBook(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
@@ -306,7 +306,7 @@ namespace book3
             }
         }
 
-        public static void Unread(string isbn)
+        public static void UnreadBook(string isbn)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
