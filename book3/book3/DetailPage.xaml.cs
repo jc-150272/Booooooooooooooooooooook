@@ -68,10 +68,6 @@ namespace book3
 
         }
 
-        private void Buttondayo(object sender, EventArgs e)
-        {
-            DisplayAlert("isbn",Isbn,"ok");
-        }
 
         // 読みたいボタンを点滅させる
         private void OnImageClicked1(object sender, EventArgs e)
