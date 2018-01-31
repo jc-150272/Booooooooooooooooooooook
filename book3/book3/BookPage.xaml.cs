@@ -29,8 +29,8 @@ namespace book3
                 var query = UserModel.selectUser();
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
-                var RedList = new List<String>();
-                var BlueList = new List<String>();
+                var RedList = new List<int>();
+                var BlueList = new List<int>();
                 //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
@@ -42,7 +42,7 @@ namespace book3
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
-                    items.Add(new Book { Name = titleList[j],ISBN = isbnList[j],Value = 2.5 });
+                    items.Add(new Book { Name = titleList[j],ISBN = isbnList[j], RedStar = 1 });
 
                 }
             }

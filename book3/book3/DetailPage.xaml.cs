@@ -70,13 +70,13 @@ namespace book3
             if (read == 0)
             {
                 this.unread2.Text = "未読";
-                this.FirstToggled = "false";
+                unread1.IsToggled = "false";
             }
 
             if (read == 1)
             {
                 this.unread2.Text = "既読";
-                this.FirstToggled = "true";
+                unread1.IsToggled= "true";
             }
         }
 
