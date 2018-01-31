@@ -23,6 +23,7 @@ namespace book3
             InitializeComponent();
 
             UserModel.insertUser("111111111111", "美味しんぼ", "おいしんぼ","a");
+            UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b");
 
              if (UserModel.selectUser() != null)
             {
@@ -38,11 +39,11 @@ namespace book3
                     isbnList.Add(user.ISBN);
                     RedList.Add(user.RedStar);
                     BlueList.Add(user.BlueBook);
-
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
-                    items.Add(new Book { Name = titleList[j],ISBN = isbnList[j], RedStar = 1 });
+                    items.Add(new Book { 
+                        Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j],});
 
                 }
             }
@@ -54,6 +55,8 @@ namespace book3
 
             for (var i = 0; i < items.Count; i++)
             {
+
+                /*
                 if (items[i].Value <= 0.25)
                 {
                     items[i].ValueImage = "value_0.png";
@@ -108,7 +111,7 @@ namespace book3
                 {
                     items[i].ValueImage = "value_5.png";
                 }
-
+*/
 
                 if (items[i].RedStar == 1)
                 {
