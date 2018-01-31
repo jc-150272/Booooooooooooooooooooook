@@ -24,6 +24,7 @@
                 <Label Text="出版社:" Margin="30,15" FontSize="20"/>
                 <Label Text="ジャンル:" Margin="30,15" FontSize="20"/>
                 <Label Text="発売日:" Margin="30,15" FontSize="20"/>
+                <Button Text="ボタン" Clicked="Buttondayo"/>
             </StackLayout>
 
             <!-- 本の画像を表示 -->

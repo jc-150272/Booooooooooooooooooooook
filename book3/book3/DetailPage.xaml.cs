@@ -33,7 +33,6 @@ namespace book3
             //var query = UserModel.selectUserISBN(this.Isbn);
             
             Isbn = isbn;
-            DisplayAlert("isbn",Isbn,"ok");
             if(UserModel.selectUserISBN(isbn) != null){
                 var query = UserModel.selectUserISBN(isbn);
 
@@ -69,6 +68,10 @@ namespace book3
 
         }
 
+        private void Buttondayo(object sender, EventArgs e)
+        {
+            DisplayAlert("isbn",Isbn,"ok");
+        }
 
         // 読みたいボタンを点滅させる
         private void OnImageClicked1(object sender, EventArgs e)
