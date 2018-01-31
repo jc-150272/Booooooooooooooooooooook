@@ -131,11 +131,11 @@ namespace book3
 
         public int Value { get; set; }
 
-        public bool Read { get; set; }
+        public int Read { get; set; }
 
-        public bool RedStar { get; set; }
+        public int RedStar { get; set; }
 
-        public bool BlueBook { get; set; }
+        public int BlueBook { get; set; }
         //Userテーブルに行追加するメソッドです
         //------------------------Insert文的なの--------------------------
 
@@ -231,7 +231,7 @@ namespace book3
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try{                   
-                   db.Execute("UPDATE [Book] SET BlueBook = true WHERE ISBN =" + isbn);
+                   db.Execute("UPDATE [Book] SET BlueBook = 1 WHERE ISBN =" + isbn);
                    db.Commit();
                 }
                 catch (Exception e)
@@ -247,7 +247,7 @@ namespace book3
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
             {
                 try{
-                    db.Execute("UPDATE [Book] SET BlueBook = false WHERE ISBN =" + isbn);
+                    db.Execute("UPDATE [Book] SET BlueBook = 0 WHERE ISBN =" + isbn);
                     db.Commit();
                 }
                 catch (Exception e)

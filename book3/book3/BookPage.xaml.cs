@@ -105,12 +105,12 @@ namespace book3
                 }
 
 
-                if (items[i].RedStar == true)
+                if (items[i].RedStar == 1)
                 {
                     items[i].RedStar2 = "red_star_72.png";
                 }
 
-                if (items[i].BlueBook == true)
+                if (items[i].BlueBook == 1)
                 {
                     items[i].BlueBook2 = "blue_book_72.png";
                 }
@@ -130,13 +130,13 @@ namespace book3
 
         public string ValueImage { get; set; }
 
-        public bool RedStar { get; set; }
+        public int RedStar { get; set; }
 
-        public string RedStar2 { get; set; }
+        public int RedStar2 { get; set; }
 
-        public bool BlueBook { get; set; }
+        public int BlueBook { get; set; }
 
-        public string BlueBook2 { get; set; }
+        public int BlueBook2 { get; set; }
 
         public bool Expand { get; set; }
         }

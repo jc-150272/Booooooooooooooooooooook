@@ -22,10 +22,10 @@ namespace book3
         string publishername;
         string genre;
         int value;
-        bool read;
-        bool redstar;
-        bool bluebook;
-        bool bluebook2;
+        int read;
+        int redstar;
+        int bluebook;
+        int bluebook2;
 
         public DetailPage(string isbn)
         {
@@ -46,7 +46,7 @@ namespace book3
             }
             titledayo.Text = title;
             
-            if (bluebook == true)
+            if (bluebook == 1)
             {
                 this.image1.Image = "blue_book_72.png";
             }
@@ -56,7 +56,7 @@ namespace book3
                 this.image1.Image = "gray_book_72.png";
             }
 
-            if (redstar == true)
+            if (redstar == 1)
             {
                 this.image2.Image = "red_star_72.png";
             }
@@ -72,16 +72,16 @@ namespace book3
         // 読みたいボタンを点滅させる
         private void OnImageClicked1(object sender, EventArgs e)
         {
-            if (bluebook == true)
+            if (bluebook == 1)
             {
                 UserModel.Gray_Book(Isbn);
                 this.image1.Image = "gray_book_72.png";
-                bluebook = false;
+                bluebook = 0;
                 var query = UserModel.selectUserISBN(Isbn);
                 foreach(var book in query){
                 bluebook2 = book.BlueBook;
                 }
-                if(bluebook2 == false){
+                if(bluebook2 == 0){
                     DisplayAlert("falseが格納されてるよ","BB","CC");
                 }
             }
@@ -90,12 +90,12 @@ namespace book3
             {
                 UserModel.Blue_Book(Isbn);
                 this.image1.Image = "blue_book_72.png";
-                bluebook = true;
+                bluebook = 1;
                 var query = UserModel.selectUserISBN(Isbn);
                 foreach(var book in query){
                 bluebook2 = book.BlueBook;
                 }
-                if(bluebook2 == true){
+                if(bluebook2 == 1){
                     DisplayAlert("trueが格納されてるよ","BB","CC");
                 }
             }
