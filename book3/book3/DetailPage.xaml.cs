@@ -33,6 +33,7 @@ namespace book3
             //var query = UserModel.selectUserISBN(this.Isbn);
             
             Isbn = isbn;
+            DisplayAlert("isbn",Isbn,"ok");
             if(UserModel.selectUserISBN(isbn) != null){
                 var query = UserModel.selectUserISBN(isbn);
 
