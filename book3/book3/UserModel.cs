@@ -257,6 +257,70 @@ namespace book3
                 }
             }
         }
+
+        public static void Red_Star(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try{                   
+                   db.Execute("UPDATE [Book] SET RedStar = 1 WHERE ISBN =" + isbn);
+                   db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
+        public static void Gray_Star(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try{
+                    db.Execute("UPDATE [Book] SET RedStar = 0 WHERE ISBN =" + isbn);
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
+        public static void Read(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try{
+                    db.Execute("UPDATE [Book] SET read = 1 WHERE ISBN =" + isbn);
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
+        public static void Unread(string isbn)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try{
+                    db.Execute("UPDATE [Book] SET read = 0 WHERE ISBN =" + isbn);
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
 /*
         public static void Gray_Book(string isbn)
         {

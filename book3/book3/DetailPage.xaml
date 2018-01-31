@@ -36,7 +36,7 @@
             <Button x:Name="image2" Image="{Binding StarImage}" Clicked="OnImageClicked2" AbsoluteLayout.LayoutBounds=".3,.2,32,32" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
             <!-- 未読・既読スイッチを表示 -->
-            <Switch x:Name="unread1" Toggled="OnToggled"  AbsoluteLayout.LayoutBounds=".5,.3,32,32" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <Switch x:Name="unread1" IsToggled= "{Binding FirstToggled}"  Toggled="OnToggled"  AbsoluteLayout.LayoutBounds=".5,.3,32,32" AbsoluteLayout.LayoutFlags="PositionProportional"/>
             <Label x:Name="unread2" Text="未読" AbsoluteLayout.LayoutBounds=".515,.35,32,32" AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
             <!-- 本の評価を表示 -->

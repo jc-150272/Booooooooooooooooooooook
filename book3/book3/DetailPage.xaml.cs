@@ -25,7 +25,7 @@ namespace book3
         int read;
         int redstar;
         int bluebook;
-        int bluebook2;
+
 
         public DetailPage(string isbn)
         {
@@ -40,6 +40,7 @@ namespace book3
                 title = book.Title;
                 bluebook = book.BlueBook;
                 redstar = book.RedStar;
+                read = book.Read;
                 }
             }else{
                 DisplayAlert("表なし","表なし","OK");
@@ -66,6 +67,17 @@ namespace book3
                 this.image2.Image = "gray_star_72.png";
             }
 
+            if (read == 0)
+            {
+                this.unread2.Text = "未読";
+                this.FirstToggled = "false";
+            }
+
+            if (read == 1)
+            {
+                this.unread2.Text = "既読";
+                this.FirstToggled = "true";
+            }
         }
 
 
@@ -77,13 +89,6 @@ namespace book3
                 UserModel.Gray_Book(Isbn);
                 this.image1.Image = "gray_book_72.png";
                 bluebook = 0;
-                var query = UserModel.selectUserISBN(Isbn);
-                foreach(var book in query){
-                bluebook2 = book.BlueBook;
-                }
-                if(bluebook2 == 0){
-                    DisplayAlert("falseが格納されてるよ","BB","CC");
-                }
             }
 
             else
@@ -91,13 +96,6 @@ namespace book3
                 UserModel.Blue_Book(Isbn);
                 this.image1.Image = "blue_book_72.png";
                 bluebook = 1;
-                var query = UserModel.selectUserISBN(Isbn);
-                foreach(var book in query){
-                bluebook2 = book.BlueBook;
-                }
-                if(bluebook2 == 1){
-                    DisplayAlert("trueが格納されてるよ","BB","CC");
-                }
             }
         }
 
@@ -106,12 +104,14 @@ namespace book3
         {
             if (redstar == 1)
             {
+                UserModel.Gray_Star(Isbn);
                 this.image2.Image = "red_star_72.png";
                 redstar = 0;
             }
 
             else
             {
+                UserModel.Red_Star(Isbn);
                 this.image2.Image = "gray_star_72.png";
                 redstar = 1;
             }
@@ -122,10 +122,12 @@ namespace book3
         {
             if (unread1.IsToggled == true)
             {
+                UserModel.Read(Isbn);
                 this.unread2.Text = "既読";
             }
             if (unread1.IsToggled == false)
             {
+                UserModel.Unread(Isbn);
                 this.unread2.Text = "未読";
             }
         }
