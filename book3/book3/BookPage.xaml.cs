@@ -167,42 +167,42 @@ namespace book3
             if (picker.SelectedIndex == 0)
             {
                 terms = "TitleKana";
-                query = UserModel.sortAsc(terms);
+                var query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 1)
             {
                 terms = "TitleKana";
-                query = UserModel.sortDesc(terms);
+                var query = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 2)
             {
                 terms = "AuthorKana";
-                query = UserModel.sortAsc(terms);
+                var query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 3)
             {
                 terms = "AuthorKana";
-                query = UserModel.sortDesc(terms);
+                var query = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 4)
             {
                 terms = "SalesDate";
-                query = UserModel.sortAsc(terms);
+                var query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 5)
             {
                 terms = "SalesDate";
-                query = UserModel.sortDesc(terms);
+                var query = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 6)
             {
                 terms = "Date";
-                query = UserModel.sortAsc(terms);
+                var query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 7)
             {
                 terms = "Date";
-                query = UserModel.sortDesc(terms);
+                var query = UserModel.sortDesc(terms);
             }
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
