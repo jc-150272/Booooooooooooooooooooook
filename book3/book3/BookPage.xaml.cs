@@ -17,6 +17,7 @@ namespace book3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookPage : ContentPage
     {        
+        private List query;
         public ObservableCollection<Book> items = new ObservableCollection<Book>();
         public BookPage()
         {
@@ -168,50 +169,48 @@ namespace book3
             if (picker.SelectedIndex == 0)
             {
                 terms = "TitleKana";
-                var query = UserModel.sortAsc(terms);
+                query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 1)
             {
                 terms = "TitleKana";
-                var query = UserModel.sortDesc(terms);
+                query = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 2)
             {
                 terms = "AuthorKana";
-                var query = UserModel.sortAsc(terms);
+                query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 3)
             {
                 terms = "AuthorKana";
-                var query = UserModel.sortDesc(terms);
+                query = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 4)
             {
                 terms = "SalesDate";
-                var query = UserModel.sortAsc(terms);
+                query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 5)
             {
                 terms = "SalesDate";
-                var query = UserModel.sortDesc(terms);
+                query = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 6)
             {
                 terms = "Date";
-                var query = UserModel.sortAsc(terms);
+                query = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 7)
             {
                 terms = "Date";
-                var query = UserModel.sortDesc(terms);
+                query = UserModel.sortDesc(terms);
             }
-
-
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
                 var RedList = new List<int>();
                 var BlueList = new List<int>();
-                //*をリストにぶち込んで個数分addするのでもいいのでは
+
                 foreach (var user in query)
                 {
                     titleList.Add(user.Title);

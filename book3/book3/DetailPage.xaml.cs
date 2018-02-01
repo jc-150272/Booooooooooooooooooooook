@@ -16,12 +16,13 @@ namespace book3
         // ボタンとスイッチの判定
         string Isbn;
         string title;
-        string titlekana;
+        string Date;
+        storing type;
         string itemcaption;
+        string category;
         string author;
-        string publishername;
-        string genre;
-        int value;
+        string publisher;
+
         int read;
         int redstar;
         int bluebook;
