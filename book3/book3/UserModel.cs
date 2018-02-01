@@ -390,13 +390,12 @@ namespace book3
                     //return db.Query<UserModel>("SELECT * FROM [Book] order by [_id] desc limit 15");
                     if (sortkey == 1)
                     {
-                        return db.Query<UserModel>("SELECT * FROM [Book] order by" + terms);
+                        return db.Query<UserModel>("SELECT * FROM [Book] ORDER BY " + terms);
                     }
                     else if (sortkey == 2)
                     {
-                        return db.Query<UserModel>("SELECT * FROM [Book] order by" + terms + "desc");
+                        return db.Query<UserModel>("SELECT * FROM [Book] ORDER BY " + terms + " desc");
                     }
-
                     else
                     {
                         return db.Query<UserModel>("SELECT * FROM [Book]");
