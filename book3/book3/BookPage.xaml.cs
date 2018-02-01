@@ -17,7 +17,6 @@ namespace book3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookPage : ContentPage
     {        
-        private List query;
         public ObservableCollection<Book> items = new ObservableCollection<Book>();
         public BookPage()
         {
