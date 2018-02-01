@@ -18,12 +18,12 @@ namespace book3
     public partial class BookPage : ContentPage
     {        
         public ObservableCollection<Book> items = new ObservableCollection<Book>();
+        public int sortkey = 0;
+        public string terms = "error";
+
         public BookPage()
         {
             InitializeComponent();
-
-            int sortkey = 0;
-            string terms ="error";
 
             UserModel.insertUser("111111111111", "美味しんぼaaaaaaaaaaaaaaaaaaaaaaaa", "おいしんぼ","a");
             UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b");
@@ -209,7 +209,7 @@ namespace book3
 
         }
 
-        private void OnButtonClicked(object sender, EventArgs e)
+        private async void OnButtonClicked(object sender, EventArgs e)
         {
             //2秒処理を待つ
             await Task.Delay(2000);

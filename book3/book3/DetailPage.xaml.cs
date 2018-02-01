@@ -46,7 +46,7 @@ namespace book3
               　Date = book.Date;
                 type = book.Type;
                 publisher = book.Publisher;
-                itemcaption = book.ItemCaption
+                itemcaption = book.ItemCaption;
                 }
             }else{
                 DisplayAlert("表なし","表なし","OK");
@@ -55,7 +55,7 @@ namespace book3
             Type2.Text = "タイプ：" + type;
             SalesDate2.Text = "発売日:" + Date;
             Publisher2.Text = "出版社:" + publisher;
-            ItemCaption2.Text = "説明:" + itemCapation;
+            ItemCaption2.Text = "説明:" + itemcaption;
             
             if (bluebook == 1)
             {
