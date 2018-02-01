@@ -120,12 +120,26 @@ namespace book3
         public string Title { get; set; }
 
         public string TitleKana { get; set; }
+     
+        //サブタイトル列
+        public string SubTitle { get; set; }
+
+        //サブタイトルカナ列
+        public string SubTitleKana { get; set; }
 
         public string ItemCaption { get; set; }
 
         public string Author { get; set; }
 
-        public string publisherName { get; set; }
+        public string AuthorKana { get; set; }
+
+        public string publisher { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public int Price { get; set; }
+
+        public string Type { get; set; }
 
         public string Genre { get; set; }
 
