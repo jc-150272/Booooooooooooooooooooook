@@ -162,7 +162,8 @@ namespace book3
         {
             await Task.Delay(2000);
             items.Clear();
-            var query = UserModel.sortAsc("TitleKana");
+            var query = UserModel.selectUser();
+
 
             /*
             string terms;
