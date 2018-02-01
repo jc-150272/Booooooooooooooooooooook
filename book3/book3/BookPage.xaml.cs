@@ -56,63 +56,6 @@ namespace book3
             for (var i = 0; i < items.Count; i++)
             {
 
-                /*
-                if (items[i].Value <= 0.25)
-                {
-                    items[i].ValueImage = "value_0.png";
-                }
-
-                else if (items[i].Value <= 0.75)
-                {
-                    items[i].ValueImage = "value_0.5.png";
-                }
-
-                else if (items[i].Value <= 1.25)
-                {
-                    items[i].ValueImage = "value_1.png";
-                }
-
-                else if (items[i].Value <= 1.75)
-                {
-                    items[i].ValueImage = "value_1.5.png";
-                }
-
-                else if (items[i].Value <= 2.25)
-                {
-                    items[i].ValueImage = "value_2.png";
-                }
-
-                else if (items[i].Value <= 2.75)
-                {
-                    items[i].ValueImage = "value_2.5.png";
-                }
-
-                else if (items[i].Value <= 3.25)
-                {
-                    items[i].ValueImage = "value_3.png";
-                }
-
-                else if (items[i].Value <= 3.75)
-                {
-                    items[i].ValueImage = "value_3.5.png";
-                }
-
-                else if (items[i].Value <= 4.25)
-                {
-                    items[i].ValueImage = "value_4.png";
-                }
-
-                else if (items[i].Value <= 4.75)
-                {
-                    items[i].ValueImage = "value_4.5.png";
-                }
-
-                else
-                {
-                    items[i].ValueImage = "value_5.png";
-                }
-*/
-
                 if (items[i].RedStar == 1)
                 {
                     items[i].RedStar2 = "red_star_72.png";
@@ -134,10 +77,6 @@ namespace book3
 
         public string Name { get; set; }
 
-        public double Value { get; set; }
-
-        public string ValueImage { get; set; }
-
         public int RedStar { get; set; }
 
         public string RedStar2 { get; set; }
@@ -146,7 +85,6 @@ namespace book3
 
         public string BlueBook2 { get; set; }
 
-        public bool Expand { get; set; }
         }
 
         private void BookDetail(object sender, ItemTappedEventArgs e)
@@ -176,32 +114,51 @@ namespace book3
                 var query = UserModel.selectUser();
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
+                var RedList = new List<int>();
+                var BlueList = new List<int>();
                 //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
                     titleList.Add(user.Title);
                     isbnList.Add(user.ISBN);
+                    RedList.Add(user.RedStar);
+                    BlueList.Add(user.BlueBook);
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
-                    items.Add(new Book { Name = titleList[j],ISBN = isbnList[j] /*Value = 2.5*/ });
+                    items.Add(new Book { 
+                        Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j],});
 
                 }
             }
             else
             {
-                items.Add(new Book { Name = "空やで"});
+                items.Add(new Book { Name = "空やで" });
+            }
+
+
+            for (var i = 0; i < items.Count; i++)
+            {
+
+                if (items[i].RedStar == 1)
+                {
+                    items[i].RedStar2 = "red_star_72.png";
+                }
+
+                if (items[i].BlueBook == 1)
+                {
+                    items[i].BlueBook2 = "blue_book_72.png";
+                }
+
             }
 
             BookListView.ItemsSource = items;
-            
 
             //リフレッシュを止める
             this.BookListView.IsRefreshing = false;
         }
+        
     }
-
-
 
 }
     

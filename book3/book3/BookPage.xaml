@@ -4,7 +4,8 @@
              x:Class="book3.BookPage"
              Title="本棚">
    
-    <ListView x:Name="BookListView" RowHeight="100" ItemTapped="BookDetail">
+    <ListView x:Name="BookListView" IsPullToRefreshEnabled="True"
+                   Refreshing="OnRefreshing" RowHeight="100" ItemTapped="BookDetail">
         <ListView.ItemTemplate>
             <DataTemplate>
 
