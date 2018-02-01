@@ -160,59 +160,65 @@ namespace book3
 
         private async void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            await Task.Delay(2000);
-            items.Clear();
-            var query = UserModel.selectUser();
-
-
-            /*
+            int sortkey;
             string terms;
             if (picker.SelectedIndex == 0)
             {
                 terms = "TitleKana";
-                var query = UserModel.sortAsc(terms);
+                sortkey = 1;
             }
             else if (picker.SelectedIndex == 1)
             {
                 terms = "TitleKana";
-                var query = UserModel.sortDesc(terms);
+                sortkey = 2;
             }
             else if (picker.SelectedIndex == 2)
             {
                 terms = "AuthorKana";
-                var query = UserModel.sortAsc(terms);
+                sortkey = 1;
             }
             else if (picker.SelectedIndex == 3)
             {
                 terms = "AuthorKana";
-                var query = UserModel.sortDesc(terms);
+                sortkey = 2;
             }
             else if (picker.SelectedIndex == 4)
             {
                 terms = "SalesDate";
-                var query = UserModel.sortAsc(terms);
+                sortkey= 1;
             }
             else if (picker.SelectedIndex == 5)
             {
                 terms = "SalesDate";
-                var query = UserModel.sortDesc(terms);
+                sortkey = 2;
             }
             else if (picker.SelectedIndex == 6)
             {
                 terms = "Date";
-                var query = UserModel.sortAsc(terms);
+                sortkey = 1;
             }
             else if (picker.SelectedIndex == 7)
             {
                 terms = "Date";
-                var query = UserModel.sortDesc(terms);
+                sortkey = 2;
             }
-            */
-            var titleList = new List<String>();
+
+        }
+
+        private void OnButtonClicked(object sender, EventArgs e)
+        {
+            //2秒処理を待つ
+            await Task.Delay(2000);
+            items.Clear();
+
+            if (UserModel.sortselectUser(terms,sortkey) != null)
+            {
+                var query = UserModel.sortselectUser(terms,sortkey);
+                var titleList = new List<String>();
                 var isbnList = new List<String>();
                 var RedList = new List<int>();
                 var BlueList = new List<int>();
-
+                //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
                     titleList.Add(user.Title);
@@ -222,10 +228,20 @@ namespace book3
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
-                    items.Add(new Book { 
-                        Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j],});
+                    items.Add(new Book
+                    {
+                        Name = titleList[j],
+                        ISBN = isbnList[j],
+                        RedStar = RedList[j],
+                        BlueBook = BlueList[j],
+                    });
 
                 }
+            }
+            else
+            {
+                items.Add(new Book { Name = "空やで" });
+            }
 
 
             for (var i = 0; i < items.Count; i++)
@@ -247,7 +263,6 @@ namespace book3
 
             //リフレッシュを止める
             this.BookListView.IsRefreshing = false;
-        
         }
     }
 

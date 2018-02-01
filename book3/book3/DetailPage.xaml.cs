@@ -42,11 +42,19 @@ namespace book3
                 bluebook = book.BlueBook;
                 redstar = book.RedStar;
                 read = book.Read;
+                author = book.Author;
+              　Date = book.Date;
+                type = book.Type;
+                publisher = book.Publisher;
                 }
             }else{
                 DisplayAlert("表なし","表なし","OK");
             }
-            titledayo.Text = title;
+            title2.Text = title;
+            Type2.Text = "タイプ：" + type;
+            SalesDate2.Text = "発売日:" + Date;
+            Publisher2.Text = "出版社:" + publisher;
+            ItemCaption2.Text = "説明:" + itemCapation;
             
             if (bluebook == 1)
             {

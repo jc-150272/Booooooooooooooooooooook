@@ -379,6 +379,36 @@ namespace book3
 
         //Userテーブルの行データを取得します
         //--------------------------select文的なの--------------------------
+        public static List<UserModel> sortselectUser(string terms ,int sortkey)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+
+                try
+                {
+                    //データベースに指定したSQLを発行します
+                    //return db.Query<UserModel>("SELECT * FROM [Book] order by [_id] desc limit 15");
+                    if (sortkey == 1)
+                    {
+                        return db.Query<UserModel>("SELECT * FROM [Book] order by" + terms);
+                    }
+                    if (sortkey == 2)
+                    {
+                        return db.Query<UserModel>("SELECT * FROM [Book] order by" + terms + "desc");
+                    }
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
+
+        /*
+        //Userテーブルの行データを取得します
+        //--------------------------select文的なの--------------------------
         public static List<UserModel> sortAsc(string terms)
         {
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -421,7 +451,7 @@ namespace book3
                     return null;
                 }
             }
-        }
+        }*/
 
     }
 }

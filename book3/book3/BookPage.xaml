@@ -29,6 +29,10 @@
                     <x:String>登録日：降順</x:String>
                 </Picker.Items>
             </Picker>
+            
+            <Button Text="ソートする"
+                    Clicked="OnSortButtonClicked"
+                    />
     
     <ListView x:Name="BookListView" IsPullToRefreshEnabled="True"
                    Refreshing="OnRefreshing" RowHeight="100" ItemTapped="BookDetail">
