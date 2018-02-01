@@ -163,62 +163,63 @@ namespace book3
         {
             await Task.Delay(2000);
             items.Clear();
+            var query2;
             
             string terms;
 
             if (picker.SelectedIndex == 0)
             {
                 terms = "TitleKana";
-                query = UserModel.sortAsc(terms);
+                query2 = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 1)
             {
                 terms = "TitleKana";
-                query = UserModel.sortDesc(terms);
+                query2 = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 2)
             {
                 terms = "AuthorKana";
-                query = UserModel.sortAsc(terms);
+                query2 = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 3)
             {
                 terms = "AuthorKana";
-                query = UserModel.sortDesc(terms);
+                query2 = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 4)
             {
                 terms = "SalesDate";
-                query = UserModel.sortAsc(terms);
+                query2 = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 5)
             {
                 terms = "SalesDate";
-                query = UserModel.sortDesc(terms);
+                query2 = UserModel.sortDesc(terms);
             }
             else if (picker.SelectedIndex == 6)
             {
                 terms = "Date";
-                query = UserModel.sortAsc(terms);
+                query2 = UserModel.sortAsc(terms);
             }
             else if (picker.SelectedIndex == 7)
             {
                 terms = "Date";
-                query = UserModel.sortDesc(terms);
+                query2 = UserModel.sortDesc(terms);
             }
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
                 var RedList = new List<int>();
                 var BlueList = new List<int>();
 
-                foreach (var user in query)
+                foreach (var user in query2)
                 {
                     titleList.Add(user.Title);
                     isbnList.Add(user.ISBN);
                     RedList.Add(user.RedStar);
                     BlueList.Add(user.BlueBook);
                 }
-                for (var j = 0; j < query.Count; j++)
+                for (var j = 0; j < query2.Count; j++)
                 {
                     items.Add(new Book { 
                         Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j],});

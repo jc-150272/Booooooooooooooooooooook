@@ -17,7 +17,7 @@ namespace book3
         string Isbn;
         string title;
         string Date;
-        storing type;
+        string type;
         string itemcaption;
         string category;
         string author;
