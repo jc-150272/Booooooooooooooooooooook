@@ -157,7 +157,97 @@ namespace book3
             //リフレッシュを止める
             this.BookListView.IsRefreshing = false;
         }
+
+        private async void picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            await Task.Delay(2000);
+            items.Clear();
+            
+            string terms;
+
+            if (picker.SelectedIndex == 0)
+            {
+                terms = "TitleKana";
+                var query = UserModel.sortAsc(terms);
+            }
+            else if (picker.SelectedIndex == 1)
+            {
+                terms = "TitleKana";
+                var query = UserModel.sortDesc(terms);
+            }
+            else if (picker.SelectedIndex == 2)
+            {
+                terms = "AuthorKana";
+                var query = UserModel.sortAsc(terms);
+            }
+            else if (picker.SelectedIndex == 3)
+            {
+                terms = "AuthorKana";
+                var query = UserModel.sortDesc(terms);
+            }
+            else if (picker.SelectedIndex == 4)
+            {
+                terms = "SalesDate";
+                var query = UserModel.sortAsc(terms);
+            }
+            else if (picker.SelectedIndex == 5)
+            {
+                terms = "SalesDate";
+                var query = UserModel.sortDesc(terms);
+            }
+            else if (picker.SelectedIndex == 6)
+            {
+                terms = "Date";
+                var query = UserModel.sortAsc(terms);
+            }
+            else if (picker.SelectedIndex == 7)
+            {
+                terms = "Date";
+                var query = UserModel.sortDesc(terms);
+            }
+
+
+                var titleList = new List<String>();
+                var isbnList = new List<String>();
+                var RedList = new List<int>();
+                var BlueList = new List<int>();
+                //*をリストにぶち込んで個数分addするのでもいいのでは
+                foreach (var user in query)
+                {
+                    titleList.Add(user.Title);
+                    isbnList.Add(user.ISBN);
+                    RedList.Add(user.RedStar);
+                    BlueList.Add(user.BlueBook);
+                }
+                for (var j = 0; j < query.Count; j++)
+                {
+                    items.Add(new Book { 
+                        Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j],});
+
+                }
+
+
+            for (var i = 0; i < items.Count; i++)
+            {
+
+                if (items[i].RedStar == 1)
+                {
+                    items[i].RedStar2 = "red_star_72.png";
+                }
+
+                if (items[i].BlueBook == 1)
+                {
+                    items[i].BlueBook2 = "blue_book_72.png";
+                }
+
+            }
+
+            BookListView.ItemsSource = items;
+
+            //リフレッシュを止める
+            this.BookListView.IsRefreshing = false;
         
+        }
     }
 
 }

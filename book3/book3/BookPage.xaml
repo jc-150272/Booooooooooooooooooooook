@@ -3,7 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="book3.BookPage"
              Title="本棚">
-   
+       <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text=""></Label>
+            <!-- 検索するバーを表示-->
+            <SearchBar Placeholder = "Search"
+                       PlaceholderColor="Gray"
+                       x:Name="sBar"/>
+
+            <!-- 親カテゴリを指定するプルダウンを表示 -->
+            <Picker Title="ソート"
+                        WidthRequest="240" 
+                        SelectedIndexChanged="picker_SelectedIndexChanged"
+                        x:Name="picker">
+                <Picker.Items>
+                   
+                    <x:String>五十音：昇順</x:String>
+                    <x:String>五十音：降順</x:String>                                        
+                    <x:String>著者名：昇順</x:String>
+                    <x:String>著者名：降順</x:String>
+                    <x:String>発売日：昇順</x:String>
+                    <x:String>発売日：降順</x:String>
+                    <x:String>登録日：昇順</x:String>
+                    <x:String>登録日：降順</x:String>
+                </Picker.Items>
+            </Picker>
+    
     <ListView x:Name="BookListView" IsPullToRefreshEnabled="True"
                    Refreshing="OnRefreshing" RowHeight="100" ItemTapped="BookDetail">
         <ListView.ItemTemplate>
@@ -62,4 +88,6 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
