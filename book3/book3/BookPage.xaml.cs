@@ -25,9 +25,9 @@ namespace book3
         {
             InitializeComponent();
 
-            UserModel.insertUser("111111111111", "美味しんぼaaaaaaaaaaaaaaaaaaaaaaaa", "おいしんぼ","a","かりやてつ");
-            UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b","うえやまとち");
-            UserModel.insertUser("333333333333", "ミスター味っ子", "みすたーあじっこ", "c", "てらさわだいすけ");
+            UserModel.insertUser("111111111111", "美味しんぼ", "おいしんぼ","a");
+            UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b");
+            UserModel.insertUser("333333333333", "ミスター味っ子", "みすたーあじっこ", "b");
 
 
             if (UserModel.selectUser() != null)
@@ -209,7 +209,7 @@ namespace book3
 
         }
 
-        private async void OnSortButtonClicked(object sender, EventArgs e)
+        private async void OnButtonClicked(object sender, EventArgs e)
         {
             //2秒処理を待つ
             await Task.Delay(2000);
