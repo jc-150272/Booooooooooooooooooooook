@@ -162,7 +162,9 @@ namespace book3
         {
             await Task.Delay(2000);
             items.Clear();
-            
+            var query = UserModel.sortAsc("TitleKana");
+
+            /*
             string terms;
             if (picker.SelectedIndex == 0)
             {
@@ -204,7 +206,8 @@ namespace book3
                 terms = "Date";
                 var query = UserModel.sortDesc(terms);
             }
-                var titleList = new List<String>();
+            */
+            var titleList = new List<String>();
                 var isbnList = new List<String>();
                 var RedList = new List<int>();
                 var BlueList = new List<int>();
