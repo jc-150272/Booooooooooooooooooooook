@@ -133,9 +133,9 @@ namespace book3
 
         public string AuthorKana { get; set; }
 
-        public string publisher { get; set; }
+        public string Publisher { get; set; }
 
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
 
         public int Price { get; set; }
 
@@ -392,9 +392,14 @@ namespace book3
                     {
                         return db.Query<UserModel>("SELECT * FROM [Book] order by" + terms);
                     }
-                    if (sortkey == 2)
+                    else if (sortkey == 2)
                     {
                         return db.Query<UserModel>("SELECT * FROM [Book] order by" + terms + "desc");
+                    }
+
+                    else
+                    {
+                        return db.Query<UserModel>("SELECT * FROM [Book]");
                     }
                 }
                 catch (Exception e)

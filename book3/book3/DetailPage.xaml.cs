@@ -46,6 +46,7 @@ namespace book3
               　Date = book.Date;
                 type = book.Type;
                 publisher = book.Publisher;
+                itemcaption = book.ItemCaption
                 }
             }else{
                 DisplayAlert("表なし","表なし","OK");

@@ -22,8 +22,13 @@ namespace book3
         {
             InitializeComponent();
 
+            int sortkey = 0;
+            string terms ="error";
+
             UserModel.insertUser("111111111111", "美味しんぼaaaaaaaaaaaaaaaaaaaaaaaa", "おいしんぼ","a");
             UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b");
+
+
 
              if (UserModel.selectUser() != null)
             {
@@ -160,8 +165,7 @@ namespace book3
 
         private async void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int sortkey;
-            string terms;
+
             if (picker.SelectedIndex == 0)
             {
                 terms = "TitleKana";
