@@ -394,7 +394,7 @@ namespace book3
                     }
                     else if (sortkey == 2)
                     {
-                        return db.Query<UserModel>("SELECT * FROM [Book] order by " + terms + "desc");
+                        return db.Query<UserModel>("SELECT * FROM [Book] order by " + terms + " desc");
                     }
                     else
                     {
