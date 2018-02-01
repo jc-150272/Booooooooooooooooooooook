@@ -105,14 +105,14 @@ namespace book3
             if (redstar == 1)
             {
                 UserModel.Gray_Star(Isbn);
-                this.image2.Image = "red_star_72.png";
+                this.image2.Image = "gray_star_72.png";
                 redstar = 0;
             }
 
             else
             {
                 UserModel.Red_Star(Isbn);
-                this.image2.Image = "gray_star_72.png";
+                this.image2.Image = "red_star_72.png";
                 redstar = 1;
             }
         }
