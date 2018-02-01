@@ -25,12 +25,12 @@ namespace book3
         {
             InitializeComponent();
 
-            UserModel.insertUser("111111111111", "美味しんぼaaaaaaaaaaaaaaaaaaaaaaaa", "おいしんぼ","a");
-            UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b");
+            UserModel.insertUser("111111111111", "美味しんぼaaaaaaaaaaaaaaaaaaaaaaaa", "おいしんぼ","a","かりやてつ");
+            UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b","うえやまとち");
+            UserModel.insertUser("333333333333", "ミスター味っ子", "みすたーあじっこ", "c", "てらさわだいすけ");
 
 
-
-             if (UserModel.selectUser() != null)
+            if (UserModel.selectUser() != null)
             {
                 var query = UserModel.selectUser();
                 var titleList = new List<String>();

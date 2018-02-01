@@ -154,7 +154,7 @@ namespace book3
         //------------------------Insert文的なの--------------------------
 
         //id name オーバーロード
-        public static void insertUser(string isbn, string title, string titlekana, string itemcaption)
+        public static void insertUser(string isbn, string title, string titlekana, string itemcaption, string autherkana)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -164,7 +164,7 @@ namespace book3
                     //データベースにUserテーブルを作成する
                     db.CreateTable<UserModel>();
 
-                    db.Insert(new UserModel() { ISBN = isbn, Title = title, TitleKana = titlekana, ItemCaption = itemcaption });
+                    db.Insert(new UserModel() { ISBN = isbn, Title = title, TitleKana = titlekana, ItemCaption = itemcaption , AuthorKana = autherkana});
                     db.Commit();
                 }
                 catch (Exception e)
