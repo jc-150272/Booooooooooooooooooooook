@@ -209,7 +209,7 @@ namespace book3
 
         }
 
-        private async void OnButtonClicked(object sender, EventArgs e)
+        private async void OnSortButtonClicked(object sender, EventArgs e)
         {
             //2秒処理を待つ
             await Task.Delay(2000);
