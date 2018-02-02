@@ -11,7 +11,7 @@
             <SearchBar Placeholder = "Search"
                        PlaceholderColor="Gray"
                        x:Name="sBar"
-                       SearchButtonPressed="Serch_title"/>
+                       SearchButtonPressed="Search_title"/>
 
             <!-- 親カテゴリを指定するプルダウンを表示 -->
             <Picker Title="ソート"

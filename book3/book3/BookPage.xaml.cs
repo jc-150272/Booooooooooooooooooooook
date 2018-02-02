@@ -289,68 +289,73 @@ namespace book3
         }
 
         //サーチイベントハンドラ
-        private async void Serch_title(object sender, EventArgs e){
+        private async void Search_title(object sender, EventArgs e){
             string keyword = sBar.Text.ToString();
-            if (UserModel.selectUser_search(keyword) != null)
+            if (keyword != null)
             {
-                var query = UserModel.selectUser_search(keyword);
-                var titleList = new List<String>();
-                var isbnList = new List<String>();
-                var RedList = new List<int>();
-                var BlueList = new List<int>();
-                var RedList2 = new List<string>();
-                var BlueList2 = new List<string>();
-                //*をリストにぶち込んで個数分addするのでもいいのでは
-                foreach (var user in query)
+                if (UserModel.selectUser_search(keyword) != null)
                 {
-                    titleList.Add(user.Title);
-                    isbnList.Add(user.ISBN);
-                    RedList.Add(user.RedStar);
-                    BlueList.Add(user.BlueBook);
-                }
-                for (var h = 0; h < query.Count; h++)
-                {
-                    if (RedList[h] == 1)
+                    var query = UserModel.selectUser_search(keyword);
+                    var titleList = new List<String>();
+                    var isbnList = new List<String>();
+                    var RedList = new List<int>();
+                    var BlueList = new List<int>();
+                    var RedList2 = new List<string>();
+                    var BlueList2 = new List<string>();
+                    //*をリストにぶち込んで個数分addするのでもいいのでは
+                    foreach (var user in query)
                     {
-                        RedList2.Add("red_star_72.png");
+                        titleList.Add(user.Title);
+                        isbnList.Add(user.ISBN);
+                        RedList.Add(user.RedStar);
+                        BlueList.Add(user.BlueBook);
                     }
-                    else
+                    for (var h = 0; h < query.Count; h++)
                     {
-                        RedList2.Add("");
-                    }
+                        if (RedList[h] == 1)
+                        {
+                            RedList2.Add("red_star_72.png");
+                        }
+                        else
+                        {
+                            RedList2.Add("");
+                        }
 
-                    if (BlueList[h] == 1)
-                    {
-                        BlueList2.Add("blue_book_72.png");
+                        if (BlueList[h] == 1)
+                        {
+                            BlueList2.Add("blue_book_72.png");
+                        }
+                        else
+                        {
+                            BlueList2.Add("");
+                        }
                     }
-                    else
+                    for (var j = 0; j < query.Count; j++)
                     {
-                        BlueList2.Add("");
-                    }
-                }
-                for (var j = 0; j < query.Count; j++)
-                {
-                    items.Add(new Book
-                    {
-                        Name = titleList[j],
-                        ISBN = isbnList[j],
-                        RedStar = RedList[j],
-                        BlueBook = BlueList[j],
-                        RedStar2 = RedList2[j],
-                        BlueBook2 = BlueList2[j]
-                    });
+                        items.Add(new Book
+                        {
+                            Name = titleList[j],
+                            ISBN = isbnList[j],
+                            RedStar = RedList[j],
+                            BlueBook = BlueList[j],
+                            RedStar2 = RedList2[j],
+                            BlueBook2 = BlueList2[j]
+                        });
 
+                    }
                 }
+                else
+                {
+                    items.Add(new Book { Name = "空やで" });
+                }
+
+
+                BookListView.ItemsSource = items;
+
+                //リフレッシュを止める
+                this.BookListView.IsRefreshing = false;
+
             }
-            else
-            {
-                items.Add(new Book { Name = "空やで" });
-            }
-
-            BookListView.ItemsSource = items;
-
-            //リフレッシュを止める
-            this.BookListView.IsRefreshing = false;
         }
     }
 

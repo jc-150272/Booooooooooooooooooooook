@@ -249,7 +249,7 @@ namespace book3
                 {
                     //データベースに指定したSQLを発行します
                     //return db.Query<UserModel>("SELECT * FROM [Book] order by [_id] desc limit 15");
-                    return db.Query<UserModel>("SELECT * FROM [Book] WHERE LIKE '%"+ keyword + "%'");
+                    return db.Query<UserModel>("SELECT * FROM [Book] WHERE Title LIKE '%"+ keyword + "%'");
 
                 }
                 catch (Exception e)
