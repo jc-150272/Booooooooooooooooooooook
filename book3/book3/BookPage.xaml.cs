@@ -25,7 +25,7 @@ namespace book3
         {
             InitializeComponent();
 
-            UserModel.insertUser("111111111111", "美味しんぼ", "おいしんぼ","a");
+            //UserModel.insertUser("111111111111", "美味しんぼ", "おいしんぼ","a");
             UserModel.insertUser("222222222222","クッキングパパ","くっきんぐぱぱ","b");
             UserModel.insertUser("333333333333", "ミスター味っ子", "みすたーあじっこ", "b");
             UserModel.insertUser("444444444444", "基本情報技術者パーフェクトラーニング", "きほんじょうほうぎじゅつしゃぱーふぇくとらーにんぐ", "c");
