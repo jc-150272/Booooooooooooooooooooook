@@ -60,16 +60,14 @@ namespace book3
 
             for (var i = 0; i < items.Count; i++)
             {
-
-                //if (items[i].RedStar == 1)
-                //{
+                if (items[i].BlueBook == 1)
+                {
                     items[i].RedStar2 = "red_star_72.png";
-                //}
-
-                //if (items[i].BlueBook == 1)
-                //{
+                }
+                if (items[i].BlueBook == 1)
+                {
                     items[i].BlueBook2 = "blue_book_72.png";
-                //}
+                }
 
             }
 
@@ -121,6 +119,8 @@ namespace book3
                 var isbnList = new List<String>();
                 var RedList = new List<int>();
                 var BlueList = new List<int>();
+                var RedList2 = new List<string>();
+                var BlueList2 = new List<string>();
                 //*をリストにぶち込んで個数分addするのでもいいのでは
                 foreach (var user in query)
                 {
@@ -128,11 +128,13 @@ namespace book3
                     isbnList.Add(user.ISBN);
                     RedList.Add(user.RedStar);
                     BlueList.Add(user.BlueBook);
+                    RedList2.Add("red_star_72.png");
+                    BlueList2.Add("blue_book_72.png");
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
                     items.Add(new Book { 
-                        Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j],});
+                        Name = titleList[j],ISBN = isbnList[j], RedStar = RedList[j], BlueBook = BlueList[j], RedStar2 = RedList2[j], BlueBook2 = BlueList2[j]});
 
                 }
             }
@@ -141,21 +143,23 @@ namespace book3
                 items.Add(new Book { Name = "空やで" });
             }
 
-
+            /*
             for (var i = 0; i < items.Count; i++)
             {
 
-                //if (items[i].RedStar == 1)
-                //{
+                if (items[i].RedStar == 1)
+                {
                     items[i].RedStar2 = "red_star_72.png";
-                //}
+                }
 
-                //if (items[i].BlueBook == 1)
-                //{
+                if (items[i].BlueBook == 1)
+                {
                     items[i].BlueBook2 = "blue_book_72.png";
-                //}
+                }
 
             }
+            */
+
 
             BookListView.ItemsSource = items;
 
@@ -247,19 +251,18 @@ namespace book3
                 items.Add(new Book { Name = "空やで" });
             }
 
-
             for (var i = 0; i < items.Count; i++)
             {
 
-                //if (items[i].RedStar == 1)
-                //{
+                if (items[i].RedStar == 1)
+                {
                     items[i].RedStar2 = "red_star_72.png";
-                //}
+                }
 
-                //if (items[i].BlueBook == 1)
-                //{
+                if (items[i].BlueBook == 1)
+                {
                     items[i].BlueBook2 = "blue_book_72.png";
-                //}
+                }
 
             }
 
