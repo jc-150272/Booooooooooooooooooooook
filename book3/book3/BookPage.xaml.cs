@@ -347,7 +347,7 @@ namespace book3
                 }
                 else
                 {
-                    DisplayAlert("ERROR!", "Not Found", "OK");
+                    await DisplayAlert("ERROR!", "Not Found", "OK");
                 }
 
 
