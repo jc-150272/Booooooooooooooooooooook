@@ -347,7 +347,7 @@ namespace book3
                 }
                 else
                 {
-                    await DisplayAlert("ERROR!", "Not Found", "OK");
+                    items.Add(new Book { Name = "表示するものがありません" });
                 }
 
 
