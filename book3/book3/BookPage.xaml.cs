@@ -291,7 +291,7 @@ namespace book3
         //サーチイベントハンドラ
         private async void Search_title(object sender, EventArgs e){
             string keyword = sBar.Text.ToString();
-            items.Clear;
+            items.Clear();
             if (keyword != null)
             {
                 if (UserModel.selectUser_search(keyword) != null)
