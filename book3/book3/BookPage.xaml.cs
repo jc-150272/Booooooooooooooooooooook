@@ -128,8 +128,23 @@ namespace book3
                     isbnList.Add(user.ISBN);
                     RedList.Add(user.RedStar);
                     BlueList.Add(user.BlueBook);
-                    RedList2.Add("red_star_72.png");
-                    BlueList2.Add("blue_book_72.png");
+                    if (user.Redstar == 1)
+                    {
+                        RedList2.Add("red_star_72.png");
+                    }
+                    else
+                    {
+                        RedList2.Add("");
+                    }
+
+                    if (user.BlueBook == 1)
+                    {
+                        BlueList2.Add("blue_book_72.png");
+                    }
+                    else
+                    {
+                        BlueList2.Add("");
+                    }
                 }
                 for (var j = 0; j < query.Count; j++)
                 {
