@@ -128,7 +128,10 @@ namespace book3
                     isbnList.Add(user.ISBN);
                     RedList.Add(user.RedStar);
                     BlueList.Add(user.BlueBook);
-                    if (user.Redstar == 1)
+                }
+                for(var h = 0; h < query.Count; h++)
+                {
+                    if (RedList[h] == 1)
                     {
                         RedList2.Add("red_star_72.png");
                     }
@@ -137,7 +140,7 @@ namespace book3
                         RedList2.Add("");
                     }
 
-                    if (user.BlueBook == 1)
+                    if (BlueList[h] == 1)
                     {
                         BlueList2.Add("blue_book_72.png");
                     }
