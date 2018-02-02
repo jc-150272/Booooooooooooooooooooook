@@ -141,5 +141,15 @@ namespace book3
                 this.unread2.Text = "未読";
             }
         }
+
+        private async void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+            bool x = await DisplayAlert("削除してもよろしいですか？","はい","いいえ");
+            if(x == true)
+            { 
+                UserModel.DeleteBook(Isbn);
+                Navigation.PushAsync(new BookPage());
+            }     
+        }
     }
 }
