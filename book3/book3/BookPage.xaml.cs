@@ -293,7 +293,7 @@ namespace book3
             string keyword = sBar.Text.ToString();
             if (UserModel.selectUser_search(keyword) != null)
             {
-                var query = UserModel.selectUser_search(key);
+                var query = UserModel.selectUser_search(keyword);
                 var titleList = new List<String>();
                 var isbnList = new List<String>();
                 var RedList = new List<int>();
