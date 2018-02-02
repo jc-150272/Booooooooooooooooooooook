@@ -144,7 +144,7 @@ namespace book3
 
         private async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            bool x = await DisplayAlert("削除してもよろしいですか？","はい","いいえ");
+            bool x = await DisplayAlert("警告","削除してもよろしいですか？","はい","いいえ");
             if(x == true)
             { 
                 UserModel.DeleteBook(Isbn);
