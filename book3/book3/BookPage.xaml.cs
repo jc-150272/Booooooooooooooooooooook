@@ -90,7 +90,7 @@ namespace book3
 
         }
 
-        private void BookDetail(object sender, ItemTappedEventArgs e)
+        private void BookDetail(object sender, EventArgs e)
         {
 
         Book book = (Book)BookListView.SelectedItem;
