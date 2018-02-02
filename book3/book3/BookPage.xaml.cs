@@ -136,7 +136,7 @@ namespace book3
                         RedList2.Add("red_star_72.png");
                     }
                     else
-                    {
+                    {  
                         RedList2.Add("");
                     }
 
