@@ -61,15 +61,15 @@ namespace book3
             for (var i = 0; i < items.Count; i++)
             {
 
-                if (items[i].RedStar == 1)
-                {
+                //if (items[i].RedStar == 1)
+                //{
                     items[i].RedStar2 = "red_star_72.png";
-                }
+                //}
 
-                if (items[i].BlueBook == 1)
-                {
+                //if (items[i].BlueBook == 1)
+                //{
                     items[i].BlueBook2 = "blue_book_72.png";
-                }
+                //}
 
             }
 
@@ -145,15 +145,15 @@ namespace book3
             for (var i = 0; i < items.Count; i++)
             {
 
-                if (items[i].RedStar == 1)
-                {
+                //if (items[i].RedStar == 1)
+                //{
                     items[i].RedStar2 = "red_star_72.png";
-                }
+                //}
 
-                if (items[i].BlueBook == 1)
-                {
+                //if (items[i].BlueBook == 1)
+                //{
                     items[i].BlueBook2 = "blue_book_72.png";
-                }
+                //}
 
             }
 
@@ -251,15 +251,15 @@ namespace book3
             for (var i = 0; i < items.Count; i++)
             {
 
-                if (items[i].RedStar == 1)
-                {
+                //if (items[i].RedStar == 1)
+                //{
                     items[i].RedStar2 = "red_star_72.png";
-                }
+                //}
 
-                if (items[i].BlueBook == 1)
-                {
+                //if (items[i].BlueBook == 1)
+                //{
                     items[i].BlueBook2 = "blue_book_72.png";
-                }
+                //}
 
             }
 
