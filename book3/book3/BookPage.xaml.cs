@@ -130,7 +130,7 @@ namespace book3
                     BlueList.Add(user.BlueBook);
                 }
                 for(var h = 0; h < query.Count; h++)
-                {
+                { 
                     if (RedList[h] == 1)
                     {
                         RedList2.Add("red_star_72.png");
