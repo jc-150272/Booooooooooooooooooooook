@@ -19,7 +19,6 @@ namespace book3
         string Date;
         string type;
         string itemcaption;
-        string category;
         string author;
         string publisher;
 
