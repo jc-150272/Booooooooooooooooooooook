@@ -5,14 +5,14 @@
     <ContentPage.Content>
 
             <!-- レイアウトを垂直方向に表示 -->
-            <StackLayout>
-                                       
+            <StackLayout>                                
+                
                 <!-- 本のタイトルを表示 -->
                 <Label Text= "title" Margin="30" FontSize="30" x:Name="title2"/>
 
                 <!-- 横線を表示 -->
                 <BoxView Color="Gray" WidthRequest="1000" HeightRequest="1" />
-
+                
                 <Grid>
 
                             <!-- 6行にして高さを設定 -->
@@ -48,10 +48,9 @@
 
                 <!-- 未読・既読スイッチを表示 -->
                 <Switch x:Name="unread1" Toggled="OnToggled" Grid.Row="3" Grid.Column="4"/>
-                <Label x:Name="unread2" Text="未読" FontSize="24" Grid.Row="4" Grid.Column="4" Margin="3,0,0,0"/>
+                <Label x:Name="unread2" Text="未読" FontSize="24" Grid.Row="4" Grid.Column="4" Margin="5,0,0,0"/>
                     
-            </Grid>
-
+            </Grid>  
                 
             <!-- 横線を表示 -->
             <BoxView Color="Black" WidthRequest="1000" HeightRequest="1" />

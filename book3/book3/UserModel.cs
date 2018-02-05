@@ -135,7 +135,7 @@ namespace book3
 
         public string Publisher { get; set; }
 
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         public int Price { get; set; }
 

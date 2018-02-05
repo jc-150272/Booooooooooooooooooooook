@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace book3
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DetailPage : ContentPage
+	public partial class AndroidDetailPage : ContentPage
 	{
 
         // ボタンとスイッチの判定
@@ -27,53 +27,57 @@ namespace book3
         int bluebook;
 
 
-        public DetailPage(string isbn)
+        public AndroidDetailPage(string isbn)
         {
             InitializeComponent();
             //var query = UserModel.selectUserISBN(this.Isbn);
-            
+
             Isbn = isbn;
-            if(UserModel.selectUserISBN(isbn) != null){
+            if (UserModel.selectUserISBN(isbn) != null)
+            {
                 var query = UserModel.selectUserISBN(isbn);
 
-                foreach(var book in query){
-                title = book.Title;
-                bluebook = book.BlueBook;
-                redstar = book.RedStar;
-                read = book.Read;
-                author = book.Author;
-              　Date = book.Date;
-                type = book.Type;
-                publisher = book.Publisher;
-                itemcaption = book.ItemCaption;
+                foreach (var book in query)
+                {
+                    title = book.Title;
+                    bluebook = book.BlueBook;
+                    redstar = book.RedStar;
+                    read = book.Read;
+                    author = book.Author;
+                    Date = book.Date;
+                    type = book.Type;
+                    publisher = book.Publisher;
+                    itemcaption = book.ItemCaption;
                 }
-            }else{
-                DisplayAlert("表なし","表なし","OK");
+            }
+            else
+            {
+                DisplayAlert("表なし", "表なし", "OK");
             }
             title2.Text = title;
             Type2.Text = "タイプ：" + type;
             SalesDate2.Text = "発売日:" + Date;
             Publisher2.Text = "出版社:" + publisher;
             ItemCaption2.Text = "説明:" + itemcaption;
-            
+
             if (bluebook == 1)
             {
-                this.image1.Image = "blue_book_72.png";
+                this.image1.Image = "blue_book_24.png";
             }
 
             else
             {
-                this.image1.Image = "gray_book_72.png";
+                this.image1.Image = "gray_book_24.png";
             }
 
             if (redstar == 1)
             {
-                this.image2.Image = "red_star_72.png";
+                this.image2.Image = "red_star_24.png";
             }
-          
+
             else
             {
-                this.image2.Image = "gray_star_72.png";
+                this.image2.Image = "gray_star_24.png";
             }
 
             if (read == 0)
@@ -85,7 +89,7 @@ namespace book3
             if (read == 1)
             {
                 this.unread2.Text = "既読";
-                unread1.IsToggled= true;
+                unread1.IsToggled = true;
             }
         }
 
@@ -96,14 +100,14 @@ namespace book3
             if (bluebook == 1)
             {
                 UserModel.Gray_Book(Isbn);
-                this.image1.Image = "gray_book_72.png";
+                this.image1.Image = "gray_book_24.png";
                 bluebook = 0;
             }
 
             else
             {
                 UserModel.Blue_Book(Isbn);
-                this.image1.Image = "blue_book_72.png";
+                this.image1.Image = "blue_book_24.png";
                 bluebook = 1;
             }
         }
@@ -114,14 +118,14 @@ namespace book3
             if (redstar == 1)
             {
                 UserModel.Gray_Star(Isbn);
-                this.image2.Image = "gray_star_72.png";
+                this.image2.Image = "gray_star_24.png";
                 redstar = 0;
             }
 
             else
             {
                 UserModel.Red_Star(Isbn);
-                this.image2.Image = "red_star_72.png";
+                this.image2.Image = "red_star_24.png";
                 redstar = 1;
             }
         }
@@ -143,12 +147,14 @@ namespace book3
 
         private async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            bool x = await DisplayAlert("警告","削除してもよろしいですか？","はい","いいえ");
-            if(x == true)
-            { 
+            bool x = await DisplayAlert("警告", "削除してもよろしいですか？", "はい", "いいえ");
+            if (x == true)
+            {
                 UserModel.DeleteBook(Isbn);
                 Navigation.PushAsync(new BookPage());
-            }     
+            }
         }
+
+
     }
 }
